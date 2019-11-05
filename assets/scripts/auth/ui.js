@@ -1,5 +1,6 @@
 'use strict'
 const store = require('./../store')
+const index = require('../messages/events')
 
 const successMessage = function (newText) {
   $('#message').html(newText)
@@ -32,6 +33,12 @@ const onSignUpFailure = () => {
 const onSignInSuccess = function (response) {
   successMessage('Signed in successfully')
   store.user = response.user
+  index.onIndex()
+  $('#changePasswordSection').show()
+  $('#signOutSection').show()
+  $('#messageSection').show()
+  $('#signInSection').hide()
+  $('#signUpSection').hide()
 }
 
 const onSignInFailure = function () {
@@ -51,6 +58,9 @@ const onChangePasswordFailure = function () {
 
 const onSignOutSuccess = responseData => {
   successMessage('Signed out successfully!')
+  $('#changePasswordSection').hide()
+  $('#signOutSection').hide()
+  $('#messageSection').hide()
 }
 
 const onSignOutFailure = function () {
