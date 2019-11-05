@@ -3,23 +3,19 @@
 const getFormFields = require('../../../lib/get-form-fields.js')
 const msgApi = require('./api.js')
 const msgUi = require('./ui.js')
-const io = require('socket.io')
+const io = require('socket.io-client')
 
 // Makes the socket.io available to all functions
-const socket = io()
+const socket = io('http://localhost:4741')
 
 // Creates a message
 const onCreateMsg = function (event) {
   event.preventDefault()
-<<<<<<< HEAD
 
-  const msg = getFormFields(event.target)
-  msgApi.createMsg(msg)
-=======
   // Creates new message in the database
   const formData = getFormFields(event.target)
   msgApi.createMsg(formData)
->>>>>>> messaging
+
     .then(msgUi.onCreateMsgSuccess)
     .catch(msgUi.onCreateMsgFailure)
   // Upon successful DB creation, emits the new message to the socket.io API for broadcast, and logs the socket response

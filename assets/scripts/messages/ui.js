@@ -4,6 +4,8 @@
 const store = require('../store')
 const msgIndexTemplate = require('../templates/msg-listing.handlebars')
 const msgApi = require('./api.js')
+const io = require('socket.io-client')
+// const socket = io('http://localhost/4741')
 
 // Message creation success and failure UI
 const onCreateMsgSuccess = responseData => {
@@ -18,17 +20,15 @@ const onCreateMsgFailure = () => {
 
 // Message index success and failure UI
 const onIndexSuccess = responseData => {
-  store.msgs = responseData.msgs
+  store.msgs = responseData.message
   console.log('Got all messages!')
   console.log(responseData)
   // This will inovke the handlebars script to populate the user view with all messages
-<<<<<<< HEAD
+
   const msgIndexHtml = msgIndexTemplate({ msgs: responseData.message })
-  $('.messages').html(msgIndexHtml)
-=======
-  const msgIndexHtml = msgIndexTemplate({ msgs: responseData.msgs })
   $('.messages').append(msgIndexHtml)
->>>>>>> messaging
+  io('http://localhost:4741')
+  // console.log(io)
 }
 
 const onIndexFailure = () => {
