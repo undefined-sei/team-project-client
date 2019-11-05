@@ -11,15 +11,10 @@ const socket = io()
 // Creates a message
 const onCreateMsg = function (event) {
   event.preventDefault()
-<<<<<<< HEAD
 
-  const msg = getFormFields(event.target)
-  msgApi.createMsg(msg)
-=======
   // Creates new message in the database
   const formData = getFormFields(event.target)
   msgApi.createMsg(formData)
->>>>>>> messaging
     .then(msgUi.onCreateMsgSuccess)
     .catch(msgUi.onCreateMsgFailure)
   // Upon successful DB creation, emits the new message to the socket.io API for broadcast, and logs the socket response
