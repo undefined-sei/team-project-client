@@ -14,7 +14,7 @@ $(() => {
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('submit', authEvents.onSignOut)
-  $('#send-message').on('submit', messageEvents.onSendMessage)
+  $('#send-message').on('submit', messageEvents.onCreateMsg)
   $('.changePasswordSection').hide()
   $('.signOutSection').hide()
   $('.messageSection').hide()

@@ -16,9 +16,7 @@ const onCreateMsg = function (event) {
 // ----------
 
 // Get all messages
-const onIndex = event => {
-  event.preventDefault()
-
+const onIndex = () => {
   msgApi.indexMsgs()
     .then(msgUi.onIndexSuccess)
     .catch(msgUi.onIndexFailure)

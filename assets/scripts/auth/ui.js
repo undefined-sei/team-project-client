@@ -34,11 +34,11 @@ const onSignInSuccess = function (response) {
   successMessage('Signed in successfully')
   store.user = response.user
   index.onIndex()
-  $('#changePasswordSection').show()
-  $('#signOutSection').show()
-  $('#messageSection').show()
-  $('#signInSection').hide()
-  $('#signUpSection').hide()
+  $('.changePasswordSection').show()
+  $('.signOutSection').show()
+  $('.messageSection').show()
+  $('.signInSection').hide()
+  $('.signUpSection').hide()
 }
 
 const onSignInFailure = function () {
@@ -58,9 +58,9 @@ const onChangePasswordFailure = function () {
 
 const onSignOutSuccess = responseData => {
   successMessage('Signed out successfully!')
-  $('#changePasswordSection').hide()
-  $('#signOutSection').hide()
-  $('#messageSection').hide()
+  $('.changePasswordSection').hide()
+  $('.signOutSection').hide()
+  $('.messageSection').hide()
 }
 
 const onSignOutFailure = function () {
