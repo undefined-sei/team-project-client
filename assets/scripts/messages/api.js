@@ -28,7 +28,34 @@ const indexMsgs = () => {
 }
 // -----------
 
+// Updates the message using the <div> id to pass to socket.io
+const updateMsg = (formData, msgId) => {
+  return $.ajax({
+    method: 'PATCH',
+    url: config.apiUrl + '/messages/' + msgId,
+    data: formData,
+    headers: {
+      Authorization: `Bearer ${store.user.token}`
+    }
+  })
+}
+// ----------
+
+// Delete message
+const deleteMsg = msgId => {
+  return $.ajax({
+    method: 'DELETE',
+    url: config.apiUrl + '/messages/' + msgId,
+    headers: {
+      Authorizaton: `Bearer ${store.user.token}`
+    }
+  })
+}
+// ----------
+
 module.exports = {
   createMsg,
-  indexMsgs
+  indexMsgs,
+  updateMsg,
+  deleteMsg
 }

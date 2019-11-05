@@ -3,6 +3,7 @@
 // const msgApi = require('./api.js')
 const store = require('../store')
 const msgIndexTemplate = require('../templates/msg-listing.handlebars')
+const msgApi = require('./api.js')
 
 // Message creation success and failure UI
 const onCreateMsgSuccess = responseData => {
@@ -21,8 +22,13 @@ const onIndexSuccess = responseData => {
   console.log('Got all messages!')
   console.log(responseData)
   // This will inovke the handlebars script to populate the user view with all messages
+<<<<<<< HEAD
   const msgIndexHtml = msgIndexTemplate({ msgs: responseData.message })
   $('.messages').html(msgIndexHtml)
+=======
+  const msgIndexHtml = msgIndexTemplate({ msgs: responseData.msgs })
+  $('.messages').append(msgIndexHtml)
+>>>>>>> messaging
 }
 
 const onIndexFailure = () => {
@@ -30,9 +36,39 @@ const onIndexFailure = () => {
 }
 // ----------
 
+// Message update success and failure UI
+const onUpdateMsgSuccess = () => {
+  msgApi.indexMsgs()
+    .then(onIndexSuccess)
+}
+
+const onUpdateMsgFailure = () => {
+  console.log('Failed to update message.')
+}
+// ----------
+
+// Message delete success and failure UI
+const onDeleteMsgSuccess = () => {
+  msgApi.indexMsgs()
+    .then(onIndexSuccess)
+}
+
+const onDeleteMsgFailure = () => {
+  console.log('Failed to delete message.')
+}
+// ----------
+
 module.exports = {
+  // Create exports
   onCreateMsgSuccess,
   onCreateMsgFailure,
+  // Read (index) exports
   onIndexSuccess,
-  onIndexFailure
+  onIndexFailure,
+  // Update exports
+  onUpdateMsgSuccess,
+  onUpdateMsgFailure,
+  // Delete exports
+  onDeleteMsgSuccess,
+  onDeleteMsgFailure
 }
