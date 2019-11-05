@@ -18,11 +18,11 @@ const onCreateMsgFailure = () => {
 
 // Message index success and failure UI
 const onIndexSuccess = responseData => {
-  store.msgs = responseData.msgs
+  store.message = responseData.message
   console.log('Got all messages!')
   console.log(responseData)
   // This will inovke the handlebars script to populate the user view with all messages
-  const msgIndexHtml = msgIndexTemplate({ msgs: responseData.msgs })
+  const msgIndexHtml = msgIndexTemplate({ msgs: responseData.message })
   $('.messages').append(msgIndexHtml)
 }
 

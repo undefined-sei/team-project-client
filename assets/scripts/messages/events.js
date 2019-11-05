@@ -7,7 +7,7 @@ const msgUi = require('./ui.js')
 const io = require('socket.io-client')
 
 // Makes the socket.io available to all functions
-const socket = io()
+const socket = io('https://localhost:4741')
 
 // Creates a message
 const onCreateMsg = function (event) {
