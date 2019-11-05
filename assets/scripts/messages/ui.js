@@ -22,13 +22,8 @@ const onIndexSuccess = responseData => {
   console.log('Got all messages!')
   console.log(responseData)
   // This will inovke the handlebars script to populate the user view with all messages
-<<<<<<< HEAD
-  const msgIndexHtml = msgIndexTemplate({ msgs: responseData.message })
-  $('.messages').html(msgIndexHtml)
-=======
   const msgIndexHtml = msgIndexTemplate({ msgs: responseData.msgs })
   $('.messages').append(msgIndexHtml)
->>>>>>> messaging
 }
 
 const onIndexFailure = () => {
