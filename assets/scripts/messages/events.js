@@ -19,7 +19,7 @@ const onCreateMsg = function (event) {
 const onIndex = event => {
   event.preventDefault()
 
-  msgApi.indexMsg()
+  msgApi.indexMsgs()
     .then(msgUi.onIndexSuccess)
     .catch(msgUi.onIndexFailure)
 }
