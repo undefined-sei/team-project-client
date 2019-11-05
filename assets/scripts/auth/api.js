@@ -23,20 +23,19 @@ const changePassword = function (formData) {
     url: config.apiUrl + '/change-password',
     method: 'PATCH',
     headers: {
-      Authorization: 'Token token=' + store.user.Token
+      Authorization: `Bearer ${store.user.token}`
     },
     data: formData
   })
 }
 
-const signOut = function (formData) {
+const signOut = function () {
   return $.ajax({
     url: config.apiUrl + '/sign-out',
     method: 'DELETE',
     headers: {
-      Authorization: 'Token token=' + store.user.Token
-    },
-    data: formData
+      Authorization: `Bearer ${store.user.token}`
+    }
   })
 }
 

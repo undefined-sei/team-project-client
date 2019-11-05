@@ -39,6 +39,7 @@ const onSignInSuccess = function (response) {
   $('.messageSection').show()
   $('.signInSection').hide()
   $('.signUpSection').hide()
+  $('.messages').show()
 }
 
 const onSignInFailure = function () {
@@ -58,9 +59,13 @@ const onChangePasswordFailure = function () {
 
 const onSignOutSuccess = responseData => {
   successMessage('Signed out successfully!')
+  $('#message').css('color', 'green')
   $('.changePasswordSection').hide()
-  $('.signOutSection').hide()
   $('.messageSection').hide()
+  $('.signInSection').show()
+  $('.signUpSection').show()
+  $('.signOutSection').hide()
+  $('.messages').hide()
 }
 
 const onSignOutFailure = function () {

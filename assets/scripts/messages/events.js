@@ -8,7 +8,7 @@ const msgUi = require('./ui.js')
 const onCreateMsg = function (event) {
   event.preventDefault()
 
-  const msg = new FormData(this)
+  const msg = getFormFields(event.target)
   msgApi.createMsg(msg)
     .then(msgUi.onCreateMsgSuccess)
     .catch(msgUi.onCreateMsgFailure)
