@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Team Undefined's Chatroom</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,6 +12,66 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>Team Undefined's Chatroom</h1>
+      <section class="signInSection">
+          <h2 class='signin'>Sign In</h2>
+          <form id="sign-in">
+            Email:
+            <div class="inputWrapper">
+              <input placeholder="Enter email..." type="email" name="credentials[email]" required>
+            </div>
+            Password:
+            <div class="inputWrapper">
+              <input placeholder="Enter password..." type="password" name="credentials[password]" class="password" required>
+            </div>
+            <button id="signIn">Sign in</button>
+
+          </form>
+        </section>
+        <section class="signUpSection">
+          <h2 class='signUp'>Sign Up</h2>
+          <form id="sign-up">
+            Email:
+            <div class="inputWrapper">
+              <input placeholder="Enter email..." type="email" name="credentials[email]">
+            </div>
+            Password:
+            <div class="inputWrapper">
+              <input placeholder="Enter password..." type="password" name="credentials[password]" class="password">
+            </div>
+            Confirm Password:
+            <div class="inputWrapper">
+              <input placeholder="Confirm password..." type="password" name="credentials[password_confirmation]" class="password">
+            </div>
+            <button id="signUp">Sign up</button>
+
+          </form>
+        </section>
+        <section class="changePasswordSection">
+          <h2 id="changePassword">Change Password</h2>
+          <form id="change-password">
+            Old Password:
+            <div class="inputWrapper">
+              <input placeholder="Enter Old Password..." type="password" name="passwords[old]" class="password">
+            </div>
+            New Password:
+            <div class="inputWrapper">
+              <input placeholder="Enter New Password..." type="password" name="passwords[new]" class="password">
+            </div>
+            <button id="changePassword">Change Password</button>
+
+          </form>
+        </section>
+        <section class="signOutSection">
+          <form id="sign-out">
+            <button id="signout">Sign Out</button>
+          </form>
+        </section>
+        <div class="messages">
+        </div>
+      <div class="inputWrapper">
+        <input placeholder="Enter New Message..." type="text" name="messages[new]" class="message">
+      </div>
+      <button id="sendMessage">SEND</button>
     </body>
 </html>
