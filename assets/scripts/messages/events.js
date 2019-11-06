@@ -11,7 +11,6 @@ const io = require('socket.io-client/dist/socket.io')
 // Makes the socket.io available to all functions
 const socket = io(config.apiUrl)
 
-<<<<<<< HEAD
 const userTyping = function (msg) {
   console.log(msg)
   if (msg) {
@@ -29,21 +28,12 @@ const newSocketMessage = function (msg) {
   $('#user-typing').hide()
   $('.messages').append(`${msgIndexHtml}`)
   $('.update-form').hide()
-=======
-// Logs new socket message to the console for debugging
-const newSocketMessage = function (msg) {
-  console.log('socket says', msg)
->>>>>>> Adjusted handlebars scripts to check message owner against signed-in user id
 }
 
 // Creates a message
 const onCreateMsg = function (event) {
   event.preventDefault()
-<<<<<<< HEAD
   // Creates new message in the database
-=======
-
->>>>>>> Adjusted handlebars scripts to check message owner against signed-in user id
   const formData = getFormFields(event.target)
   msgApi.createMsg(formData)
     .then((newMessage) => {
@@ -52,11 +42,7 @@ const onCreateMsg = function (event) {
     })
     .then(msgUi.onCreateMsgSuccess)
     .catch(msgUi.onCreateMsgFailure)
-<<<<<<< HEAD
     .then(onIndex)
-=======
-    .then(toggleUpdate)
->>>>>>> Adjusted handlebars scripts to check message owner against signed-in user id
 }
 // ----------
 
