@@ -1,10 +1,7 @@
 'use strict'
 
-const equal = function (var1, var2) {
-  if (var1 === var2) {
-    return true
-  }
-  return false
+const equal = (var1, var2) => {
+  return var1 === var2 ? true : false
 }
 
 module.exports = equal

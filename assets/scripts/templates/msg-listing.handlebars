@@ -5,12 +5,20 @@
     <p class="msg-content">
       {{msg.text}}
     </p>
+<<<<<<< HEAD
         {{#if (equal msg.owner msg.currentOwner) }}
+=======
+        {{#if ( equal msgs.owner user._id ) }}
+>>>>>>> Adjusted handlebars scripts to check message owner against signed-in user id
           <form class="update-form" data-id={{msg._id}}>
+<<<<<<< HEAD
             <input class="input-message" type="text" name="message[text]" value="{{msg.text}}">
+=======
+            <input type="text" name="message[text]" value={{msg.text}}>
+>>>>>>> Pull origin/development
             <button class="update-button" data-id={{msg._id}}>Update</button>
           </form>
-        <button class="delete-button" data-id={{msg._id}}>Delete</button>
+          <button class="delete-button" data-id={{msg._id}}>Delete</button>
         {{/if}}
   </div>
 {{/each}}
