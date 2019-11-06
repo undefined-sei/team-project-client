@@ -20,6 +20,15 @@ $(() => {
   $('.signOutSection').hide()
   $('.messageSection').hide()
 
+  // hide .messages on load
+  $('.messages').hide()
+
   // Socket.io event handlers
   socket.on('new message', messageEvents.newSocketMessage)
+  socket.on('user-typing', messageEvents.userTyping)
+
+  $('.message').on('input', () => {
+    socket.emit('user-typing', $('.message').val())
+    return false
+  })
 })

@@ -4,15 +4,29 @@ const store = require('../store.js')
 const getFormFields = require('../../../lib/get-form-fields.js')
 const msgApi = require('./api.js')
 const msgUi = require('./ui.js')
+// Require handlebars file
+const msgIndexTemplate = require('../templates/msg-listing.handlebars')
 // Require statements related to socket.io
 const io = require('socket.io-client/dist/socket.io')
 
 // Makes the socket.io available to all functions
 const socket = io('http://localhost:4741')
 
+const userTyping = function (msg) {
+  console.log(msg)
+  if (msg) {
+       $('#user-typing').show()
+     } else {
+        $('#user-typing').hide()
+     }
+}
+
 // Logs new socket message to the console for debugging
 const newSocketMessage = function (msg) {
   console.log('socket says', msg)
+  const msgIndexHtml = msgIndexTemplate({ msgs: [msg] })
+  console.log(msgIndexHtml)
+  $('.messages').append(`${msgIndexHtml}`)
 }
 
 // Creates a message
@@ -28,7 +42,7 @@ const onCreateMsg = function (event) {
     })
     .then(msgUi.onCreateMsgSuccess)
     .catch(msgUi.onCreateMsgFailure)
-    .then(onIndex)
+    // .then(onIndex)
 }
 // ----------
 
@@ -96,5 +110,6 @@ module.exports = {
   onDeleteMsg,
   onUpdateMsg,
   newSocketMessage,
-  toggleUpdate
+  toggleUpdate,
+  userTyping
 }

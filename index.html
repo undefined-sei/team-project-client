@@ -14,6 +14,7 @@
 </head>
 
 <body>
+  <div class="animation-effect">
   <h1>Team Undefined's Chatroom</h1>
   <div id="message">
   </div>
@@ -76,11 +77,13 @@
   <section class="messageSection">
     <form id="send-message">
       <div class="inputWrapper">
+        <p id='user-typing' style='display: none'>user is typing ...</p>
         <input placeholder="Enter New Message..." type="text" name="message[text]" class="message">
       </div>
       <button id="sendMessage">SEND</button>
     </form>
   </section>
+</div>
 </body>
 
 </html>
