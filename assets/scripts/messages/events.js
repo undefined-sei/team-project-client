@@ -26,7 +26,9 @@ const newSocketMessage = function (msg) {
   console.log('socket says', msg)
   const msgIndexHtml = msgIndexTemplate({ msgs: [msg] })
   console.log(msgIndexHtml)
+  $('#user-typing').hide()
   $('.messages').append(`${msgIndexHtml}`)
+  $('.update-form').hide()
 }
 
 // Creates a message
