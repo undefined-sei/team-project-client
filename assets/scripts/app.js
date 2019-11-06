@@ -5,7 +5,8 @@
 
 // use require without a reference to ensure a file is bundled
 // require('./example')
-
+const io = require('socket.io-client/dist/socket.io')
+const socket = io('http://localhost:4741')
 const authEvents = require('./auth/events.js')
 const messageEvents = require('./messages/events.js')
 
@@ -18,4 +19,7 @@ $(() => {
   $('.changePasswordSection').hide()
   $('.signOutSection').hide()
   $('.messageSection').hide()
+
+  // socket listeners
+  socket.on('new message', messageEvents.newSocketMessage)
 })

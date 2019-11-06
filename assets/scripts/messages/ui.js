@@ -1,10 +1,10 @@
 'use strict'
-
+const io = require('socket.io-client/dist/socket.io')
 // const msgApi = require('./api.js')
 const store = require('../store')
 const msgIndexTemplate = require('../templates/msg-listing.handlebars')
 const msgApi = require('./api.js')
-const io = require('socket.io-client')
+// const io = require('socket.io-client')
 // const socket = io('http://localhost/4741')
 
 // Message creation success and failure UI
