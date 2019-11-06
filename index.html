@@ -9,49 +9,62 @@
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
   <!-- Do not add `script` tags-->
+  <script src="https://kit.fontawesome.com/6a457a4271.js"></script>
   <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
 </head>
 
 <body>
+  <!-- div wraps entire content to accomplish background animation-->
   <div class="animation-effect">
-  <h1>Team Undefined's Chatroom</h1>
   <div id="message">
   </div>
-  <section class="signInSection">
-    <h2 class='signin'>Sign In</h2>
+  <div class="wrapper">
+  <div class="signInSection">
+    <!-- image of 2 phones-->
+    <img class="phone-app" src="./public/lets-chat-phone.png" alt="">
+    <div class="form-data">
     <form id="sign-in">
-      Email:
-      <div class="inputWrapper">
-        <input placeholder="Enter email..." type="email" name="credentials[email]" required>
+      <div class="logo">
+        <img src="./public/chat-logo.png" alt="">
       </div>
-      Password:
-      <div class="inputWrapper">
-        <input placeholder="Enter password..." type="password" name="credentials[password]" class="password" required>
-      </div>
-      <button id="signIn">Sign in</button>
-
+      <input placeholder="Enter email..." type="email" name="credentials[email]" required>
+      <input placeholder="Enter password..." type="password" name="credentials[password]" class="password" required>
+        <button class="form-btn" id="signIn">Sign in</button>
+        <span class="has-separator">Or</span>
+          <a class="facebook-login" href="#">
+          <i class="fab fa-facebook"></i> Log in with Facebook
+          </a>
+          <a class="password-reset" href="#">Forgot password?</a>
     </form>
-  </section>
-  <section class="signUpSection">
-    <h2 class='signUp'>Sign Up</h2>
+    <div class="sign-up-show">
+      Don't have an account? <a id="show-signup"href="#">Sign up</a>
+    </div>
+    </div>
+   </div>
+  <div class="signUpSection">
+    <div class="form-data">
     <form id="sign-up">
-      Email:
-      <div class="inputWrapper">
+      <div class="logo">
+        <img src="./public/chat-logo.png" alt="">
+      </div>
         <input placeholder="Enter email..." type="email" name="credentials[email]">
-      </div>
-      Password:
-      <div class="inputWrapper">
         <input placeholder="Enter password..." type="password" name="credentials[password]" class="password">
-      </div>
-      Confirm Password:
-      <div class="inputWrapper">
         <input placeholder="Confirm password..." type="password" name="credentials[password_confirmation]" class="password">
+      <button class="form-btn" id="signUp">Sign up</button>
+      <span class="has-separator">Or</span>
+        <a class="facebook-login" href="#">
+        <i class="fab fa-facebook"></i> Log in with Facebook
+        </a>
+        <a class="password-reset" href="#">Forgot password?</a>
+      </form>
+      <div class="sign-up-show">
+          Already have an account? <a id="show-signin"href="#">Sign In</a>
       </div>
-      <button id="signUp">Sign up</button>
 
-    </form>
-  </section>
+      </div>
+  </div>
+  </div>
   <section class="changePasswordSection">
     <h2 id="changePassword">Change Password</h2>
     <form id="change-password">

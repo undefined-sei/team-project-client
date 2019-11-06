@@ -1,22 +1,217 @@
 @import '~bootstrap/scss/bootstrap';
 
-.animation-effect {
-background: linear-gradient(-45deg, #D4D4D4, #FBFAF8, #778BA5, #FFFFFF);
-width: 100%;
-height: 100vh;
-background-size: 400% 400%;
-position: relative;
-animation: change 10s ease-in-out infinite;
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
 }
 
+html {
+  font-size: 10px;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: #fafafa;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 10rem;
+}
+
+.signInSection {
+  width: 100%;
+  max-width: 93.5rem;
+  margin: 3rem auto 0;
+  position: relative;
+  z-index: 2;
+}
+
+.signUpSection {
+  width: 100%;
+  max-width: 93.5rem;
+  margin: 3rem auto 0;
+  z-index: 1;
+}
+
+.wrapper > .signInSection {
+  display: flex;
+  padding: 0 8rem;
+}
+
+.wrapper > .signUpSection {
+  display: flex;
+  padding: 0 8rem;
+}
+
+.phone-app {
+  height: 61.8rem;
+  width: 454px;
+  /* background: url("images/mobileapp.png") center no-repeat; */
+  flex: 1;
+  align-self: center;
+  position: relative;
+  z-index: 10;
+}
+
+.form-data {
+  width: 100%;
+  max-width: 35rem;
+  margin-top: 3rem;
+  position: relative;
+}
+
+.form-data form {
+  background-color: #fff;
+  border: 2px solid #eee;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 4rem;
+  text-align: center;
+}
+
+.logo img {
+  width: 17.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.form-data form input {
+  padding: 0.8rem;
+  margin-bottom: 0.5rem;
+  border: 2px solid #eee;
+  border-radius: 0.4rem;
+}
+
+.form-btn {
+  margin: 1rem 0 1.5rem;
+  height: 3rem;
+  background-color: #3897f0;
+  font-size: 1.4rem;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+
+.has-separator {
+  font-size: 1.3rem;
+  color: #999999;
+  text-transform: uppercase;
+  position: relative;
+  margin-bottom: 2.5rem;
+}
+
+.has-separator::after,
+.has-separator::before {
+  content: '';
+  position: absolute;
+  background-color: #eee;
+  height: 1px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.has-separator::before {
+  width: 40%;
+  left: 0;
+}
+
+.has-separator::after {
+  width: 40%;
+  right: 0;
+}
+
+.facebook-login {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #385185;
+  margin-bottom: 2.5rem;
+}
+
+.facebook-login i {
+  font-size: 2rem;
+  margin-right: 0.7rem;
+}
+
+.password-reset {
+  font-size: 1.2rem;
+  color: #003569;
+}
+
+.sign-up-show {
+  text-align: center;
+  font-size: 1.4rem;
+  color: #262626;
+  padding: 2rem 0;
+  background-color: #fff;
+  border: 2px solid #eee;
+  margin: 1rem 0;
+}
+
+.sign-up-show a {
+  color: #3897f0;
+  font-weight: bold;
+}
+
+.animation-effect {
+  background: linear-gradient(-45deg, #D4D4D4, #FBFAF8, #778BA5, #FFFFFF);
+  width: 100%;
+  height: 100vh;
+  background-size: 400% 400%;
+  position: relative;
+  animation: change 10s ease-in-out infinite;
+}
 @keyframes change {
-0% {
+  0% {
     background-position: 0 50%;
-}
-50% {
+  }
+
+  50% {
     background-position: 100% 50%;
-}
-100% {
+  }
+
+  100% {
     background-position: 0 50%;
+  }
 }
+
+.animation-effect {
+  background: linear-gradient(-45deg, #D4D4D4, #FBFAF8, #778BA5, #FFFFFF);
+  width: 100%;
+  height: 100vh;
+  background-size: 400% 400%;
+  position: relative;
+  animation: change 10s ease-in-out infinite;
+}
+@keyframes change {
+  0% {
+    background-position: 0 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0 50%;
+  }
 }
