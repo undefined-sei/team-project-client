@@ -1,10 +1,16 @@
+
+
 {{#each msgs as |msg| }}
-  <div class="msg" id={{msg._id}} style="border: 1px solid gray">
-    {{msg.text}}
-    <form class="update-form" data-id={{msg._id}}>
-      <input type="text" name="message[text]" value="{{msg.text}}">
-      <button class="update-button" data-id={{msg._id}}>Update</button>
-    </form>
-    <button class="delete-button" data-id={{msg._id}}>Delete</button>
+  <div class="msg" id={{msg._id}} style="border: 1px solid gray; display: flex; flex-direction: row; align-items: center">
+    <p class="msg-content">
+      {{msg.text}}
+    </p>
+        {{#if ( equal 1 1 ) }}
+          <form class="update-form" data-id={{msg._id}}>
+            <input type="text" name="message[text]" value={{msg.text}}>
+            <button class="update-button" data-id={{msg._id}}>Update</button>
+          </form>
+        <button class="delete-button" data-id={{msg._id}}>Delete</button>
+        {{/if}}
   </div>
 {{/each}}

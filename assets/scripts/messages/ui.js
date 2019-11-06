@@ -30,8 +30,9 @@ const onIndexSuccess = responseData => {
   io('http://localhost:4741')
 
   // This will inovke the handlebars script to populate the user view with all messages
-  const msgIndexHtml = msgIndexTemplate({ msgs: responseData.message })
+  const msgIndexHtml = msgIndexTemplate({ msgs: responseData.message, user: store.user })
   $('.messages').html(msgIndexHtml)
+  $('.update-form').hide()
 }
 
 const onIndexFailure = () => {
