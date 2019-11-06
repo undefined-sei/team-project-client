@@ -12,6 +12,15 @@ const io = require('socket.io-client/dist/socket.io')
 // Makes the socket.io available to all functions
 const socket = io('http://localhost:4741')
 
+const userTyping = function (msg) {
+  console.log(msg)
+  if (msg) {
+       $('#user-typing').show()
+     } else {
+        $('#user-typing').hide()
+     }
+}
+
 // Logs new socket message to the console for debugging
 const newSocketMessage = function (msg) {
   console.log('socket says', msg)
@@ -92,5 +101,6 @@ module.exports = {
   onGetMsg,
   onDeleteMsg,
   onUpdateMsg,
-  newSocketMessage
+  newSocketMessage,
+  userTyping
 }
