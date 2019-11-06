@@ -19,6 +19,9 @@ $(() => {
   $('.changePasswordSection').hide()
   $('.signOutSection').hide()
   $('.messageSection').hide()
+  $('.update-button').on('click', messageEvents.onUpdateMsg)
+  $('.delete-button').on('click', messageEvents.onDeleteMsg)
+
   // Socket.io event handlers
   socket.on('new message', messageEvents.newSocketMessage)
 })
