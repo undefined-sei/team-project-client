@@ -40,6 +40,7 @@ const onIndex = () => {
     .then(() => {
       $('.update-form').on('submit', onUpdateMsg)
       $('.delete-button').on('click', onDeleteMsg)
+      $('.msg').on('click', toggleUpdate)
     })
 }
 // ----------
@@ -55,7 +56,6 @@ const onGetMsg = () => {
 // Update message
 const onUpdateMsg = function (event) {
   event.preventDefault()
-
   const msgId = event.target.dataset.id
   const formData = getFormFields(event.target)
   console.log(msgId)
@@ -81,11 +81,20 @@ const onDeleteMsg = function (event) {
 }
 // ----------
 
+// UI helper functions
+const toggleUpdate = function () {
+  $('.update-form').hide()
+    .then($(this).find('form').show())
+}
+
+// ----------
+
 module.exports = {
   onCreateMsg,
   onIndex,
   onGetMsg,
   onDeleteMsg,
   onUpdateMsg,
-  newSocketMessage
+  newSocketMessage,
+  toggleUpdate
 }
