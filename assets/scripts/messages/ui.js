@@ -14,6 +14,7 @@ const onCreateMsgSuccess = responseData => {
   store.message = responseData.message
   console.log('Message created!')
   $('.message').val('')
+  $('#user-typing').hide()
 }
 
 const onCreateMsgFailure = () => {

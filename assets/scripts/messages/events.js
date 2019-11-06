@@ -15,10 +15,10 @@ const socket = io('http://localhost:4741')
 const userTyping = function (msg) {
   console.log(msg)
   if (msg) {
-       $('#user-typing').show()
-     } else {
-        $('#user-typing').hide()
-     }
+    $('#user-typing').show()
+  } else {
+    $('#user-typing').hide()
+  }
 }
 
 // Logs new socket message to the console for debugging
@@ -32,7 +32,6 @@ const newSocketMessage = function (msg) {
 // Creates a message
 const onCreateMsg = function (event) {
   event.preventDefault()
-
   // Creates new message in the database
   const formData = getFormFields(event.target)
   msgApi.createMsg(formData)
@@ -42,7 +41,7 @@ const onCreateMsg = function (event) {
     })
     .then(msgUi.onCreateMsgSuccess)
     .catch(msgUi.onCreateMsgFailure)
-    // .then(onIndex)
+    .then(onIndex)
 }
 // ----------
 
@@ -98,7 +97,7 @@ const onDeleteMsg = function (event) {
 // UI helper functions
 const toggleUpdate = function () {
   $('.update-form').hide()
-    .then($(this).find('form').show())
+  $(this).find('form').show()
 }
 
 // ----------
