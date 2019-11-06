@@ -47,7 +47,7 @@ const deleteMsg = msgId => {
     method: 'DELETE',
     url: config.apiUrl + '/messages/' + msgId,
     headers: {
-      Authorizaton: `Bearer ${store.user.token}`
+      Authorization: `Bearer ${store.user.token}`
     }
   })
 }

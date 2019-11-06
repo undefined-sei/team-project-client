@@ -49,8 +49,7 @@ const onUpdateMsgFailure = () => {
 
 // Message delete success and failure UI
 const onDeleteMsgSuccess = () => {
-  msgApi.indexMsgs()
-    .then(onIndexSuccess)
+  console.log('Made it here!')
 }
 
 const onDeleteMsgFailure = () => {

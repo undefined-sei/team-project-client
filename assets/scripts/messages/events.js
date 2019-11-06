@@ -1,4 +1,5 @@
 'use strict'
+const store = require('../store.js')
 
 const getFormFields = require('../../../lib/get-form-fields.js')
 const msgApi = require('./api.js')
@@ -35,6 +36,10 @@ const onIndex = () => {
   msgApi.indexMsgs()
     .then(msgUi.onIndexSuccess)
     .catch(msgUi.onIndexFailure)
+    .then(() => {
+      $('.update-button').on('click', onUpdateMsg)
+      $('.delete-button').on('click', onDeleteMsg)
+    })
 }
 // ----------
 
@@ -55,22 +60,20 @@ const onUpdateMsg = function (event) {
   msgApi.updateMsg(msgId, formData)
     .then(msgUi.onUpdateMsgSuccess)
     .catch(msgUi.onUpdateMsgFailure)
-  // Upon successful DB update, emits message to socket.io API for broadcast, and logs the socket response
-    .then(socket.emit('update message', formData, msgId, (response) => { console.log(response) }))
 }
 // ----------
 
 // Delete message
 const onDeleteMsg = function (event) {
-  event.preventDefault()
+  console.log(store)
+
   console.log(event.target)
   // Gets the messge ID by the html attribute when the div is clicked
-  const msgId = $(event.target).attr('id')
+  const msgId = event.target.dataset.id
   msgApi.deleteMsg(msgId)
     .then(msgUi.onDeleteMsgSuccess)
     .catch(msgUi.onDeleteMsgFailure)
-    // Upon successful DB delete, emits message to socket.io API for broadcast, and logs the socket response
-    .then(socket('delete message', msgId, (response) => { console.log(response) }))
+    .then(onIndex)
 }
 // ----------
 
