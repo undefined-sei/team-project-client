@@ -9,6 +9,7 @@ const io = require('socket.io-client/dist/socket.io')
 const socket = io('http://localhost:4741')
 
 const newSocketMessage = function (msg) {
+
   console.log('socket says', msg)
 }
 
@@ -20,7 +21,7 @@ const onCreateMsg = function (event) {
   const formData = getFormFields(event.target)
   msgApi.createMsg(formData)
     .then((newMessage) => {
-      socket.emit('new message', newMessage)
+      socket.emit('new message', newMessage.message)
       return newMessage
     })
     .then(msgUi.onCreateMsgSuccess)
