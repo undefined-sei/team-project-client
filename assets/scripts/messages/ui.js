@@ -26,6 +26,7 @@ const onCreateMsgFailure = () => {
 // Message index success and failure UI
 const onIndexSuccess = responseData => {
   store.message = responseData.message
+  // Creates new property of currentOwner in the store
   store.message.forEach(x => x.currentOwner = store.user._id)
   console.log('Got all messages!')
   console.log(responseData)
