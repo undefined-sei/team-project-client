@@ -1,5 +1,6 @@
 'use strict'
 const store = require('../store.js')
+const config = require('../config.js')
 
 const getFormFields = require('../../../lib/get-form-fields.js')
 const msgApi = require('./api.js')
@@ -10,7 +11,7 @@ const msgIndexTemplate = require('../templates/msg-listing.handlebars')
 const io = require('socket.io-client/dist/socket.io')
 
 // Makes the socket.io available to all functions
-const socket = io('http://localhost:4741')
+const socket = io(config.apiUrl)
 
 const userTyping = function (msg) {
   console.log(msg)
