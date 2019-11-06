@@ -12,6 +12,7 @@ const socket = io('http://localhost:4741')
 
 // Logs new socket message to the console for debugging
 const newSocketMessage = function (msg) {
+
   console.log('socket says', msg)
 }
 
