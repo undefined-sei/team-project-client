@@ -29,7 +29,7 @@ const indexMsgs = () => {
 // -----------
 
 // Updates the message using the <div> id to pass to socket.io
-const updateMsg = (formData, msgId) => {
+const updateMsg = (msgId, formData) => {
   return $.ajax({
     method: 'PATCH',
     url: config.apiUrl + '/messages/' + msgId,

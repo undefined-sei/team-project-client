@@ -38,7 +38,7 @@ const onIndex = () => {
     .then(msgUi.onIndexSuccess)
     .catch(msgUi.onIndexFailure)
     .then(() => {
-      $('.update-button').on('click', onUpdateMsg)
+      $('.update-form').on('submit', onUpdateMsg)
       $('.delete-button').on('click', onDeleteMsg)
     })
 }
@@ -55,9 +55,11 @@ const onGetMsg = () => {
 // Update message
 const onUpdateMsg = function (event) {
   event.preventDefault()
-  console.log(event.target)
-  const msgId = $(event.target).attr('id')
-  const formData = getFormFields($('.update-message')[0])
+
+  const msgId = event.target.dataset.id
+  const formData = getFormFields(event.target)
+  console.log(msgId)
+  console.log(formData)
   msgApi.updateMsg(msgId, formData)
     .then(msgUi.onUpdateMsgSuccess)
     .catch(msgUi.onUpdateMsgFailure)
