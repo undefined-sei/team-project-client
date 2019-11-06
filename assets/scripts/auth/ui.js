@@ -63,7 +63,6 @@ const onSignOutSuccess = responseData => {
   $('.changePasswordSection').hide()
   $('.messageSection').hide()
   $('.signInSection').show()
-  $('.signUpSection').show()
   $('.signOutSection').hide()
   $('.messages').hide()
 }

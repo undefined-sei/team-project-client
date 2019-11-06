@@ -19,6 +19,19 @@ $(() => {
   $('.changePasswordSection').hide()
   $('.signOutSection').hide()
   $('.messageSection').hide()
+  $('.signUpSection').hide()
+  $('#show-signup').click(function () {
+    $('.signInSection').hide()
+  })
+  $('#show-signup').click(function () {
+    $('.signUpSection').show()
+  })
+  $('#show-signin').click(function () {
+    $('.signUpSection').hide()
+  })
+  $('#show-signin').click(function () {
+    $('.signInSection').show()
+  })
 
   // hide .messages on load
   $('.messages').hide()
