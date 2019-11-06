@@ -10,6 +10,7 @@ const msgApi = require('./api.js')
 const onCreateMsgSuccess = responseData => {
   store.message = responseData.message
   console.log('Message created!')
+  $('.message').val('')
 }
 
 const onCreateMsgFailure = () => {
