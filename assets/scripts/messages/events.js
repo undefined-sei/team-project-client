@@ -4,10 +4,15 @@ const getFormFields = require('../../../lib/get-form-fields.js')
 const msgApi = require('./api.js')
 const msgUi = require('./ui.js')
 // Require statements related to socket.io
-const io = require('socket.io-client')
+const io = require('socket.io-client/dist/socket.io')
 
 // Makes the socket.io available to all functions
 const socket = io('https://localhost:4741')
+
+// Logs new socket message to the console for debugging
+const newSocketMessage = function (msg) {
+  console.log('socket says', msg)
+}
 
 // Creates a message
 const onCreateMsg = function (event) {
@@ -74,5 +79,6 @@ module.exports = {
   onIndex,
   onGetMsg,
   onDeleteMsg,
-  onUpdateMsg
+  onUpdateMsg,
+  newSocketMessage
 }
