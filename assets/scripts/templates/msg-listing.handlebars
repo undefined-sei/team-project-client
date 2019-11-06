@@ -1,7 +1,7 @@
 {{#each msgs as |msg| }}
   <div class="msg" id={{msg._id}} style="border: 1px solid gray">
     {{msg.text}}
-    <button type="update">Update</button>
-    <button type="delete">Delete</button>
+    <button class="update-button" type="update">Update</button>
+    <button class="delete-button" type="delete">Delete</button>
   </div>
 {{/each}}

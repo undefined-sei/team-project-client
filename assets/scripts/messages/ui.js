@@ -8,7 +8,9 @@ const msgApi = require('./api.js')
 
 // Message creation success and failure UI
 const onCreateMsgSuccess = responseData => {
-  store.msg = responseData.msg
+  store.message = responseData.message
+  msgApi.indexMsgs()
+    .then(onIndexSuccess)
   console.log('Message created!')
 }
 
@@ -26,7 +28,7 @@ const onIndexSuccess = responseData => {
   io('http://localhost:4741')
   // This will inovke the handlebars script to populate the user view with all messages
   const msgIndexHtml = msgIndexTemplate({ msgs: responseData.message })
-  $('.messages').append(msgIndexHtml)
+  $('.messages').html(msgIndexHtml)
 }
 
 const onIndexFailure = () => {

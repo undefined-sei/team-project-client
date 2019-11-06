@@ -18,8 +18,6 @@ const newSocketMessage = function (msg) {
 const onCreateMsg = function (event) {
   event.preventDefault()
 
-  const msg = getFormFields(event.target)
-  msgApi.createMsg(msg)
   // Creates new message in the database
   const formData = getFormFields(event.target)
   msgApi.createMsg(formData)
@@ -51,8 +49,8 @@ const onGetMsg = () => {
 // Update message
 const onUpdateMsg = function (event) {
   event.preventDefault()
-
-  const msgId = $(this).attr('id')
+  console.log(event.target)
+  const msgId = $(event.target).attr('id')
   const formData = getFormFields($('.update-message')[0])
   msgApi.updateMsg(msgId, formData)
     .then(msgUi.onUpdateMsgSuccess)
@@ -65,9 +63,9 @@ const onUpdateMsg = function (event) {
 // Delete message
 const onDeleteMsg = function (event) {
   event.preventDefault()
-
+  console.log(event.target)
   // Gets the messge ID by the html attribute when the div is clicked
-  const msgId = $(this).attr('id')
+  const msgId = $(event.target).attr('id')
   msgApi.deleteMsg(msgId)
     .then(msgUi.onDeleteMsgSuccess)
     .catch(msgUi.onDeleteMsgFailure)
