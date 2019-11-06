@@ -28,6 +28,7 @@ const onCreateMsg = function (event) {
     })
     .then(msgUi.onCreateMsgSuccess)
     .catch(msgUi.onCreateMsgFailure)
+    .then(onIndex)
 }
 // ----------
 
@@ -60,6 +61,7 @@ const onUpdateMsg = function (event) {
   msgApi.updateMsg(msgId, formData)
     .then(msgUi.onUpdateMsgSuccess)
     .catch(msgUi.onUpdateMsgFailure)
+    .then(onIndex)
 }
 // ----------
 

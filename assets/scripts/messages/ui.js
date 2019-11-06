@@ -9,8 +9,6 @@ const msgApi = require('./api.js')
 // Message creation success and failure UI
 const onCreateMsgSuccess = responseData => {
   store.message = responseData.message
-  msgApi.indexMsgs()
-    .then(onIndexSuccess)
   console.log('Message created!')
 }
 
