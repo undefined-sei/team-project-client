@@ -15,7 +15,11 @@ const onCreateMsgSuccess = responseData => {
   store.message = responseData.message
   console.log('Message created!')
   $('.message').val('')
+
   $('#user-typing').hide()
+  // const singleMsg = [responseData.message]
+  // const msgAppend = msgIndexTemplate({ msgs: singleMsg })
+  // $('.message').append(msgAppend)
 }
 
 const onCreateMsgFailure = () => {
@@ -28,8 +32,8 @@ const onIndexSuccess = responseData => {
   store.message = responseData.message
   // Creates new property of currentOwner in the store
   store.message.forEach(x => x.currentOwner = store.user._id)
-  console.log('Got all messages!')
-  console.log(responseData)
+  // console.log('Got all messages!')
+  // console.log(responseData)
   // Creates socket connection after successful log-in
   io(config.apiUrl)
   console.log(store)

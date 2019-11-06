@@ -1,12 +1,12 @@
 {{#each msgs as |msg| }}
-  <div class="msg" id={{msg._id}} style="border: 1px solid gray; display: flex; flex-direction: row; align-items: center">
-    <p class="timestamp">
+  <div class="msg" id={{msg._id}} style="display: flex; flex-direction: row; align-items: center">
+    <p class="timestamp" style="border: 1px solid red">
       {{msg.createdAt}}
     </p>
-    <p class="msg-email" style="margin: 0 0 0 5%">
+    <p class="msg-email" style="display: flex; justify-content: center; width: 10%; margin: 0 0 0 5%; border: 1px solid blue">
       {{msg.owner.email}}
     </p>
-    <p class="msg-content" style="margin: 0 0 0 5%">
+    <p class="msg-content" style="margin: 0 0 0 5%; border: 1px solid green">
       {{msg.text}}
     </p>
     {{#if (equal msg.owner._id msg.currentOwner) }}
