@@ -5,11 +5,8 @@
     <p class="msg-content">
       {{msg.text}}
     </p>
-<<<<<<< HEAD
+
         {{#if (equal msg.owner msg.currentOwner) }}
-=======
-        {{#if ( equal msgs.owner user._id ) }}
->>>>>>> Adjusted handlebars scripts to check message owner against signed-in user id
           <form class="update-form" data-id={{msg._id}}>
 <<<<<<< HEAD
             <input class="input-message" type="text" name="message[text]" value="{{msg.text}}">
