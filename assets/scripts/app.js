@@ -20,6 +20,9 @@ $(() => {
   $('.signOutSection').hide()
   $('.messageSection').hide()
 
+  // hide .messages on load
+  $('.messages').hide()
+
   // Socket.io event handlers
   socket.on('new message', messageEvents.newSocketMessage)
 })

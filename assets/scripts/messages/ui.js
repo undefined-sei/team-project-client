@@ -1,6 +1,7 @@
 'use strict'
 
 const io = require('socket.io-client/dist/socket.io')
+const socket = io('http://localhost:4741')
 // const msgApi = require('./api.js')
 const store = require('../store')
 const msgIndexTemplate = require('../templates/msg-listing.handlebars')
@@ -27,6 +28,7 @@ const onIndexSuccess = responseData => {
   console.log(responseData)
   // Creates socket connection after successful log-in
   io('http://localhost:4741')
+
   // This will inovke the handlebars script to populate the user view with all messages
   const msgIndexHtml = msgIndexTemplate({ msgs: responseData.message })
   $('.messages').html(msgIndexHtml)
