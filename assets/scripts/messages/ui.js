@@ -25,13 +25,15 @@ const onCreateMsgFailure = () => {
 // Message index success and failure UI
 const onIndexSuccess = responseData => {
   store.message = responseData.message
+  store.message.forEach(x => x.currentOwner = store.user._id)
   console.log('Got all messages!')
   console.log(responseData)
   // Creates socket connection after successful log-in
   io('http://localhost:4741')
+  console.log(store)
 
   // This will inovke the handlebars script to populate the user view with all messages
-  const msgIndexHtml = msgIndexTemplate({ msgs: responseData.message, user: store.user })
+  const msgIndexHtml = msgIndexTemplate({ msgs: store.message })
   $('.messages').html(msgIndexHtml)
   $('.update-form').hide()
 }
