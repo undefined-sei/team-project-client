@@ -1,13 +1,13 @@
 {{#each msgs as |msg| }}
   <div class="msg" id={{msg._id}} data-id={{msg.owner._id}} style="display: flex; flex-direction: row; align-items: center;">
-    <p class="timestamp" style="border: 1px solid red">
+    <p class="timestamp">
       {{msg.createdAt}}
     </p>
-    <p class="msg-email" style="display: flex; justify-content: center; width: 20%; margin: 0 0 0 5%; border: 1px solid blue">
+    <p class="msg-email" style="display: flex; justify-content: center; width: 20%; margin: 0 0 0 5%">
       {{msg.owner.email}}
     </p>
     <div style="display: flex; flex-direction: row; margin: 0 0 0 5%; width: 50%;">
-      <p class="msg-content" style="margin: 0 0 0 5%; border: 1px solid green; width: 100%">
+      <p class="msg-content" style="margin: 0 0 0 5%; width: 100%">
         {{msg.text}}
       </p>
       {{#if (equal msg.owner._id msg.currentOwner) }}
