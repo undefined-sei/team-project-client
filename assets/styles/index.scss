@@ -19,22 +19,58 @@ $blue: #94C2ED;
 // }
 
 .messages {
-  border: 2px solid #fff;
-  background-color: #fff;
-  border-radius: 5px;
-  padding: 10px;
-  margin: 10px 0;
-  width: 100rem;
-  align-self: center;
-  height: 350px;
-  overflow: scroll;
+    padding: 30px 30px 20px;
+    border-bottom: 2px solid white;
+    overflow-y: scroll;
+    height: 575px;
 }
 
+
 .msg {
+  padding: 18px 20px;
+  line-height: 26px;
   margin-top: 15px;
   margin-bottom: 15px;
-  border-radius: 5px;
+  border-radius: 7px;
   background: $blue;
+  width: 90%;
+  max-width: 800px;
+}
+
+textarea {
+      width: 100%;
+      border: none;
+      padding: 10px 20px;
+      font: 14px/22px "Lato", Arial, sans-serif;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      resize: none;
+      align-self: center;
+}
+
+.text-Wrapper {
+  padding: 30px;
+  width: 490px;
+  float: left;
+  background: #F2F5F8;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  color: #434651;
+}
+
+.message-button {
+  float: right;
+      color: $blue;
+      border-radius: 5px;
+      font-size: 18px;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      background: #F2F5F8;
+      &:hover {
+        color: darken($blue, 12%);
+      }
 }
 
 .delete-button {
