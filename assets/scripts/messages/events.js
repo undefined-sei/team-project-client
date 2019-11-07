@@ -34,6 +34,13 @@ const newSocketMessage = function (msg) {
   onIndex()
 }
 
+const newUpdateMessage = function () {
+  onIndex()
+}
+
+const newDeleteMessage = function () {
+  onIndex()
+}
 // Creates a message
 const onCreateMsg = function (event) {
   event.preventDefault()
@@ -117,5 +124,7 @@ module.exports = {
   onUpdateMsg,
   newSocketMessage,
   toggleUpdate,
-  userTyping
+  userTyping,
+  newUpdateMessage,
+  newDeleteMessage
 }
