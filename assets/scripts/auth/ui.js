@@ -24,7 +24,8 @@ const failureMessage = function (newText) {
 
 const onSignUpSuccess = responseData => {
   successMessage('Signed up successfully!')
-  console.log('hello')
+  $('.signInSection').show()
+  $('.signUpSection').hide()
 }
 
 const onSignUpFailure = () => {
