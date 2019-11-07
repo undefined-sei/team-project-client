@@ -24,6 +24,8 @@ const failureMessage = function (newText) {
 
 const onSignUpSuccess = responseData => {
   successMessage('Signed up successfully!')
+  $('.signInSection').show()
+  $('.signUpSection').hide()
 }
 
 const onSignUpFailure = () => {
@@ -63,6 +65,7 @@ const onSignOutSuccess = responseData => {
   $('.signUpSection').show()
   $('.signOutSection').hide()
   $('.messages').hide()
+  $('.signUpSection').hide()
 }
 
 const onSignOutFailure = function () {
