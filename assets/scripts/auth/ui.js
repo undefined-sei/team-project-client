@@ -7,6 +7,7 @@ const successMessage = function (newText) {
   $('#message').show(500)
   $('#message').removeClass('failure')
   $('#message').addClass('success')
+  $('#message').css('color', 'green')
   $('#message').fadeOut(850)
   $('form').trigger('reset')
 }
@@ -16,20 +17,23 @@ const failureMessage = function (newText) {
   $('form').trigger('reset')
   $('#message').addClass('failure')
   $('#message').removeClass('success')
+  $('#message').css('color', 'red')
   $('#message').show(500)
   $('#message').fadeOut(2000)
 }
 
 const onSignUpSuccess = responseData => {
   successMessage('Signed up successfully!')
+<<<<<<< HEAD
   $('#message').css('color', 'green')
   $('.signInSection').show()
   $('.signUpSection').hide()
+=======
+>>>>>>> Change visual output
 }
 
 const onSignUpFailure = () => {
   failureMessage('Sign up failed')
-  $('#message').css('color', 'red')
 }
 
 const onSignInSuccess = function (response) {
@@ -47,32 +51,28 @@ const onSignInSuccess = function (response) {
 
 const onSignInFailure = function () {
   failureMessage('Sign in failed')
-  $('#message').css('color', 'red')
 }
 
 const onChangePasswordSuccess = function () {
   successMessage('Changed password successfully!')
-  $('#message').css('color', 'green')
 }
 
 const onChangePasswordFailure = function () {
   failureMessage('change password failed')
-  $('#message').css('color', 'red')
 }
 
 const onSignOutSuccess = responseData => {
   successMessage('Signed out successfully!')
-  $('#message').css('color', 'green')
   $('.changePasswordSection').hide()
   $('.messageSection').hide()
   $('.signInSection').show()
+  $('.signUpSection').show()
   $('.signOutSection').hide()
   $('.messages').hide()
 }
 
 const onSignOutFailure = function () {
   failureMessage('Sign out failed')
-  $('#message').css('color', 'red')
 }
 
 module.exports = {
