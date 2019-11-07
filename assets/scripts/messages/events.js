@@ -40,6 +40,13 @@ const addListeners = () => {
   $('.msg').on('click', toggleUpdate)
 }
 
+const newUpdateMessage = function () {
+  onIndex()
+}
+
+const newDeleteMessage = function () {
+  onIndex()
+}
 // Creates a message
 const onCreateMsg = function (event) {
   console.log('Maybe help Alex')
@@ -122,5 +129,7 @@ module.exports = {
   onUpdateMsg,
   newSocketMessage,
   toggleUpdate,
-  userTyping
+  userTyping,
+  newUpdateMessage,
+  newDeleteMessage
 }
