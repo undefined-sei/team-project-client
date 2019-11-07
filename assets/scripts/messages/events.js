@@ -1,5 +1,6 @@
 'use strict'
 const store = require('../store.js')
+const config = require('../config.js')
 
 const getFormFields = require('../../../lib/get-form-fields.js')
 const msgApi = require('./api.js')
@@ -10,15 +11,15 @@ const msgIndexTemplate = require('../templates/msg-listing.handlebars')
 const io = require('socket.io-client/dist/socket.io')
 
 // Makes the socket.io available to all functions
-const socket = io('http://localhost:4741')
+const socket = io(config.apiUrl)
 
 const userTyping = function (msg) {
   console.log(msg)
   if (msg) {
-       $('#user-typing').show()
-     } else {
-        $('#user-typing').hide()
-     }
+    $('#user-typing').show()
+  } else {
+    $('#user-typing').hide()
+  }
 }
 
 // Logs new socket message to the console for debugging
@@ -26,13 +27,14 @@ const newSocketMessage = function (msg) {
   console.log('socket says', msg)
   const msgIndexHtml = msgIndexTemplate({ msgs: [msg] })
   console.log(msgIndexHtml)
+  $('#user-typing').hide()
   $('.messages').append(`${msgIndexHtml}`)
+  $('.update-form').hide()
 }
 
 // Creates a message
 const onCreateMsg = function (event) {
   event.preventDefault()
-
   // Creates new message in the database
   const formData = getFormFields(event.target)
   msgApi.createMsg(formData)
@@ -42,7 +44,7 @@ const onCreateMsg = function (event) {
     })
     .then(msgUi.onCreateMsgSuccess)
     .catch(msgUi.onCreateMsgFailure)
-    // .then(onIndex)
+    .then(onIndex)
 }
 // ----------
 
@@ -54,6 +56,7 @@ const onIndex = () => {
     .then(() => {
       $('.update-form').on('submit', onUpdateMsg)
       $('.delete-button').on('click', onDeleteMsg)
+      $('.msg').on('click', toggleUpdate)
     })
 }
 // ----------
@@ -69,7 +72,6 @@ const onGetMsg = () => {
 // Update message
 const onUpdateMsg = function (event) {
   event.preventDefault()
-
   const msgId = event.target.dataset.id
   const formData = getFormFields(event.target)
   console.log(msgId)
@@ -95,6 +97,14 @@ const onDeleteMsg = function (event) {
 }
 // ----------
 
+// UI helper functions
+const toggleUpdate = function () {
+  $('.update-form').hide()
+  $(this).find('form').show()
+}
+
+// ----------
+
 module.exports = {
   onCreateMsg,
   onIndex,
@@ -102,5 +112,6 @@ module.exports = {
   onDeleteMsg,
   onUpdateMsg,
   newSocketMessage,
+  toggleUpdate,
   userTyping
 }
