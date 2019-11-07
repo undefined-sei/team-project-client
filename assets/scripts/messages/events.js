@@ -25,22 +25,21 @@ const userTyping = function (msg) {
 // Logs new socket message to the console for debugging
 const newSocketMessage = function (msg) {
   console.log('socket says', msg)
-  const socketMsg = [msg]
-  const msgIndexHtml = msgIndexTemplate({ msgs: socketMsg })
+  store.socketMsg = [msg]
+  msg.currentOwner = store.user._id
+  const msgIndexHtml = msgIndexTemplate({ msgs: store.socketMsg })
   console.log(msgIndexHtml)
-  $('#user-typing').hide()
-  $('.messages').append(`${msgIndexHtml}`)
-  $('.update-form').hide()
-  onIndex()
+  $('.messages').append(msgIndexHtml)
+  $('#user-typing, .update-form').hide()
+  addListeners()
 }
 
-const newUpdateMessage = function () {
-  onIndex()
+const addListeners = () => {
+  $('.update-form').on('submit', onUpdateMsg)
+  $('.delete-button').on('click', onDeleteMsg)
+  $('.msg').on('click', toggleUpdate)
 }
 
-const newDeleteMessage = function () {
-  onIndex()
-}
 // Creates a message
 const onCreateMsg = function (event) {
   console.log('Maybe help Alex')
@@ -63,9 +62,7 @@ const onIndex = () => {
     .then(msgUi.onIndexSuccess)
     .catch(msgUi.onIndexFailure)
     .then(() => {
-      $('.update-form').on('submit', onUpdateMsg)
-      $('.delete-button').on('click', onDeleteMsg)
-      $('.msg').on('click', toggleUpdate)
+      addListeners()
     })
 }
 // ----------
@@ -87,9 +84,6 @@ const onUpdateMsg = function (event) {
   console.log(formData)
   msgApi.updateMsg(msgId, formData)
     .then(msgUi.onUpdateMsgSuccess)
-    .then(() => {
-      socket.emit('update message', 'updated')
-    })
     .catch(msgUi.onUpdateMsgFailure)
     .then(onIndex)
 }
@@ -104,9 +98,6 @@ const onDeleteMsg = function (event) {
   const msgId = event.target.dataset.id
   msgApi.deleteMsg(msgId)
     .then(msgUi.onDeleteMsgSuccess)
-    .then(() => {
-      socket.emit('delete message', 'deleted')
-    })
     .catch(msgUi.onDeleteMsgFailure)
     .then(onIndex)
 }
@@ -131,7 +122,5 @@ module.exports = {
   onUpdateMsg,
   newSocketMessage,
   toggleUpdate,
-  userTyping,
-  newUpdateMessage,
-  newDeleteMessage
+  userTyping
 }
