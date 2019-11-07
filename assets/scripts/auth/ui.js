@@ -65,6 +65,7 @@ const onSignOutSuccess = responseData => {
   $('.signUpSection').show()
   $('.signOutSection').hide()
   $('.messages').hide()
+  $('.signUpSection').hide()
 }
 
 const onSignOutFailure = function () {
