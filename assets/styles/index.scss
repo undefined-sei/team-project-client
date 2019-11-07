@@ -30,6 +30,18 @@ $blue: #94C2ED;
   }
 }
 
+.goback {
+  margin-top: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  background: #fff;
+  color: $blue;
+  &:hover {
+  color: #fff;
+  background: $blue;
+  }
+}
+
 .changePasswordSection input {
   margin-top: 5px;
   width: 250px;
@@ -62,14 +74,17 @@ h2 {
   border-radius: 10px;
 }
 
+.change-Password-Section {
+  display: flex;
+  justify-content: center;
+}
+
 /* sign-out button*/
 .out-button {
-  margin-top: 5px;
+  margin-top: 10px;
   padding: 5px;
   border-radius: 5px;
-  margin-left: 75rem;
   background: #fff;
-  margin-left: 75rem;
   color: $blue;
   &:hover {
   color: #fff;
@@ -178,6 +193,15 @@ body {
 }
 
 .signInSection {
+  width: 100%;
+  max-width: 93.5rem;
+  margin: 3rem auto 0;
+  position: relative;
+  z-index: 2;
+}
+
+
+.change-Password-Section {
   width: 100%;
   max-width: 93.5rem;
   margin: 3rem auto 0;
