@@ -1,5 +1,7 @@
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
 
+$blue: #94C2ED;
 *,
 *::after,
 *::before {
@@ -24,12 +26,15 @@
   margin: 10px 0;
   width: 100rem;
   align-self: center;
+  height: 350px;
+  overflow: scroll;
 }
 
 .msg {
   margin-top: 15px;
   margin-bottom: 15px;
   border-radius: 5px;
+  background: $blue;
 }
 
 .delete-button {
@@ -53,6 +58,7 @@ a {
 
 body {
   background-color: #fafafa;
+  font: 14px/20px "Lato", Arial, sans-serif;
 }
 
 .wrapper {
