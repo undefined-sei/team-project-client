@@ -17,6 +17,9 @@
 <body>
   <!-- div wraps entire content to accomplish background animation-->
   <div class="animation-effect">
+    <nav>
+      <button class="user-settings">User Settings</button>
+    </nav>
   <div id="message">
   </div>
   <div class="wrapper">
@@ -65,36 +68,36 @@
 
       </div>
   </div>
-  <section class="changePasswordSection">
-    <h2 id="changePassword">Change Password</h2>
-    <form id="change-password">
-      Old Password:
-      <div class="inputWrapper">
-        <input placeholder="Enter Old Password..." type="password" name="passwords[old]" class="password">
-      </div>
-      New Password:
-      <div class="inputWrapper">
-        <input placeholder="Enter New Password..." type="password" name="passwords[new]" class="password">
-      </div>
-      <button id="changePassword">Change Password</button>
 
-    </form>
-  </section>
   <section class="signOutSection">
     <form id="sign-out">
-      <button id="signout">Sign Out</button>
+      <button class="out-button"id="signout">Sign Out</button>
     </form>
   </section>
   <div class="messages">
   </div>
   <section class="messageSection">
-    <form id="send-message">
+    <div id="send-message">
       <div class="text-Wrapper">
         <p id='user-typing' style='display: none'>user is typing ...</p>
         <textarea placeholder="Enter New Message..." type="text" name="message[text]" class="message" rows="3"></textarea>
         <button class="message-button" id="sendMessage">SEND</button>
+        <!-- CHANGE PASSWORD-->
+        <div class="changePasswordSection">
+          <h2 id="changePassword">Change Password</h2>
+          <form id="change-password">
+            <div class="inputWrapper">
+              <input placeholder="Enter Old Password..." type="password" name="passwords[old]" class="password">
+            </div>
+            <div class="inputWrapper">
+              <input placeholder="Enter New Password..." type="password" name="passwords[new]" class="password">
+            </div>
+            <button class="change-button" id="changePassword">Change Password</button>
+
+          </form>
+        </div>
       </div>
-    </form>
+    </div>
   </section>
   <section class="chatroomSection">
     <form id="make-chatroom">
@@ -104,6 +107,7 @@
       <button id="createChatroom">create</button>
     </form>
   </section>
+
   <div class="chatroom-list">
   </div>
   </div>
