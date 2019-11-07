@@ -41,6 +41,7 @@ const onSignInSuccess = function (response) {
   $('.signInSection').hide()
   $('.signUpSection').hide()
   $('.messages').show()
+  $('.user-settings').show()
 }
 
 const onSignInFailure = function () {
@@ -64,6 +65,11 @@ const onSignOutSuccess = responseData => {
   $('.signOutSection').hide()
   $('.messages').hide()
   $('.signUpSection').hide()
+  $('.change-Password-Section').hide()
+  $('.messageSection').hide()
+  $('.messages').hide()
+  $('.goback').hide()
+  $('.user-settings').hide()
 }
 
 const onSignOutFailure = function () {

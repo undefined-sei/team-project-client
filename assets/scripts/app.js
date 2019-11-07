@@ -37,6 +37,7 @@ $(() => {
 
   // hide .messages on load
   $('.messages').hide()
+  $('.goback').hide()
 
   // Socket.io event handlers
   socket.on('new message', messageEvents.newSocketMessage)
@@ -50,4 +51,20 @@ $(() => {
   })
   // $('.make-chatroom').on('submit', chatroomEvents.onCreateChatroom)
   $('.chatroomSection').hide()
+  $('.change-Password-Section').hide()
+  $('.user-settings').hide()
+  $('.user-settings').click(function () {
+    $('.change-Password-Section').show()
+    $('.messageSection').hide()
+    $('.messages').hide()
+    $('.goback').show()
+    $('.user-settings').hide()
+  })
+  $('.goback').click(function () {
+    $('.change-Password-Section').hide()
+    $('.messageSection').show()
+    $('.messages').show()
+    $('.goback').hide()
+    $('.user-settings').show()
+  })
 })
