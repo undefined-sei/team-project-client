@@ -91,6 +91,9 @@ const onUpdateMsg = function (event) {
   console.log(formData)
   msgApi.updateMsg(msgId, formData)
     .then(msgUi.onUpdateMsgSuccess)
+    .then(() => {
+      socket.emit('update message', 'updated')
+    })
     .catch(msgUi.onUpdateMsgFailure)
     .then(onIndex)
 }
@@ -105,6 +108,9 @@ const onDeleteMsg = function (event) {
   const msgId = event.target.dataset.id
   msgApi.deleteMsg(msgId)
     .then(msgUi.onDeleteMsgSuccess)
+    .then(() => {
+      socket.emit('delete message', 'deleted')
+    })
     .catch(msgUi.onDeleteMsgFailure)
     .then(onIndex)
 }
