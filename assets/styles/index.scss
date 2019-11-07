@@ -130,10 +130,10 @@ h2 {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   color: #434651;
+  width: 100%;
 }
 
 .message-button {
-      float: right;
       color: $blue;
       border-radius: 5px;
       font-size: 18px;
@@ -142,6 +142,7 @@ h2 {
       cursor: pointer;
       font-weight: bold;
       background: #F2F5F8;
+      margin-left: 50px;
       &:hover {
       color: darken($blue, 12%);
       }
@@ -310,6 +311,14 @@ body {
   font-weight: bold;
   color: #385185;
   margin-bottom: 2.5rem;
+}
+
+#user-typing{
+  color: black;
+}
+
+.enterJoshMessage {
+  width: 50%;
 }
 
 .facebook-login i {
