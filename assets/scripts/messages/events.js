@@ -31,6 +31,7 @@ const newSocketMessage = function (msg) {
   $('#user-typing').hide()
   $('.messages').append(`${msgIndexHtml}`)
   $('.update-form').hide()
+  onIndex()
 }
 
 // Creates a message
@@ -98,9 +99,9 @@ const onDeleteMsg = function (event) {
 // ----------
 
 // UI helper functions
-const toggleUpdate = function () {
+const toggleUpdate = function (event) {
   $('.update-form').hide()
-  $(this).find('form').show()
+  $(event.target).find('form').show()
 }
 // ----------
 
@@ -111,5 +112,6 @@ module.exports = {
   onDeleteMsg,
   onUpdateMsg,
   newSocketMessage,
-  toggleUpdate
+  toggleUpdate,
+  userTyping
 }
