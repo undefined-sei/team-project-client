@@ -22,6 +22,8 @@ const userTyping = function (msg) {
   }
 }
 
+// Socket.io functions
+
 // Logs new socket message to the console for debugging
 const newSocketMessage = function (msg) {
   console.log('socket says', msg)
@@ -34,6 +36,18 @@ const newSocketMessage = function (msg) {
   addListeners()
 }
 
+const updateSocketMessage = function (msg) {
+  $(`#${msg[1]}`).find('.msg-content').text(msg[0])
+  console.log('Update msg' + msg)
+  $('.msg-content').show()
+  $('.update-form').hide()
+}
+
+const deleteSocketMessage = function (msg) {
+  $(`#${msg}`).remove()
+}
+// ----------
+
 const addListeners = () => {
   $('.update-form').on('submit', onUpdateMsg)
   $('.delete-button').on('click', onDeleteMsg)
@@ -42,7 +56,6 @@ const addListeners = () => {
 
 // Creates a message
 const onCreateMsg = function (event) {
-  console.log('Maybe help Alex')
   event.preventDefault()
   // Creates new message in the database
   const formData = getFormFields(event.target)
@@ -80,12 +93,14 @@ const onUpdateMsg = function (event) {
   event.preventDefault()
   const msgId = event.target.dataset.id
   const formData = getFormFields(event.target)
-  console.log(msgId)
-  console.log(formData)
   msgApi.updateMsg(msgId, formData)
+    .then(msg => {
+      socket.emit('update message', [formData.message.text, msgId])
+      return msg
+    })
     .then(msgUi.onUpdateMsgSuccess)
     .catch(msgUi.onUpdateMsgFailure)
-    .then(onIndex)
+    // .then(onIndex)
 }
 // ----------
 
@@ -97,9 +112,13 @@ const onDeleteMsg = function (event) {
   // Gets the messge ID by the html attribute when the div is clicked
   const msgId = event.target.dataset.id
   msgApi.deleteMsg(msgId)
+    .then(msg => {
+      socket.emit('delete message', msgId)
+      return msg
+    })
     .then(msgUi.onDeleteMsgSuccess)
     .catch(msgUi.onDeleteMsgFailure)
-    .then(onIndex)
+    // .then(onIndex)
 }
 // ----------
 
@@ -120,7 +139,10 @@ module.exports = {
   onGetMsg,
   onDeleteMsg,
   onUpdateMsg,
-  newSocketMessage,
   toggleUpdate,
-  userTyping
+  userTyping,
+  // Socket exports
+  newSocketMessage,
+  updateSocketMessage,
+  deleteSocketMessage
 }
