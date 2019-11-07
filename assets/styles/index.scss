@@ -155,7 +155,17 @@ p {
 .delete-button {
   display: flex;
   justify-content: flex-end;
+  margin: 1px;
   // margin-top: 5px;
+  border-radius: 5px;
+  background: #fff;
+  color: $blue;
+  &:hover {
+    color: darken($blue, 12%);
+  }
+}
+
+.update-button {
   border-radius: 5px;
   background: #fff;
   color: $blue;
