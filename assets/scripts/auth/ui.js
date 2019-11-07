@@ -24,12 +24,6 @@ const failureMessage = function (newText) {
 
 const onSignUpSuccess = responseData => {
   successMessage('Signed up successfully!')
-<<<<<<< HEAD
-  $('#message').css('color', 'green')
-  $('.signInSection').show()
-  $('.signUpSection').hide()
-=======
->>>>>>> Change visual output
 }
 
 const onSignUpFailure = () => {
