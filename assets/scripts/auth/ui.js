@@ -37,8 +37,6 @@ const onSignInSuccess = function (response) {
   store.user = response.user
   console.log(store.user)
   index.onIndex()
-  $('.changePasswordSection').show()
-  $('.signOutSection').show()
   $('.messageSection').show()
   $('.signInSection').hide()
   $('.signUpSection').hide()

@@ -18,26 +18,133 @@ $blue: #94C2ED;
 //   margin: 10px 0;
 // }
 
-.messages {
-  border: 2px solid #fff;
-  background-color: #fff;
+.user-settings {
+  margin-top: 5px;
+  padding: 5px;
   border-radius: 5px;
-  padding: 10px;
-  margin: 10px 0;
-  width: 100rem;
-  align-self: center;
-  height: 350px;
-  overflow: scroll;
+  background: #fff;
+  color: $blue;
+  &:hover {
+  color: #fff;
+  background: $blue;
+  }
 }
 
+.changePasswordSection input {
+  margin-top: 5px;
+  width: 250px;
+  height: 40px;
+}
+
+h2 {
+  color: $blue;
+}
+/* change password button*/
+
+.change-button {
+  margin-top: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  background: #fff;
+  color: $blue;
+  &:hover {
+  color: #fff;
+  background: $blue;
+  }
+}
+
+.changePasswordSection {
+  width: 315px;
+  margin-left: 60rem;
+  background-color: #F2F5F8;
+  padding: 30px;
+  padding-right: .6px;
+  border-radius: 10px;
+}
+
+/* sign-out button*/
+.out-button {
+  margin-top: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  margin-left: 75rem;
+  background: #fff;
+  margin-left: 75rem;
+  color: $blue;
+  &:hover {
+  color: #fff;
+  background: $blue;
+  }
+  }
+
+.messages {
+    padding: 30px 30px 20px;
+    border-bottom: 2px solid white;
+    overflow-y: scroll;
+    height: 575px;
+}
+
+
 .msg {
+  line-height: 26px;
   margin-top: 15px;
   margin-bottom: 15px;
-  border-radius: 5px;
+  border-radius: 7px;
   background: $blue;
+  width: 90%;
+  max-width: 800px;
+}
+
+textarea {
+      width: 100%;
+      border: none;
+      padding: 10px 20px;
+      font: 14px/22px "Lato", Arial, sans-serif;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      resize: none;
+      align-self: center;
+}
+
+.text-Wrapper {
+  padding: 30px;
+  width: 490px;
+  float: center;
+  background: #F2F5F8;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  color: #434651;
+}
+
+.message-button {
+      float: right;
+      color: $blue;
+      border-radius: 5px;
+      font-size: 18px;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      background: #F2F5F8;
+      &:hover {
+      color: darken($blue, 12%);
+      }
+}
+
+p {
+  color: #fff;
 }
 
 .delete-button {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 5px;
+  border-radius: 5px;
+  background: #fff;
+  color: $blue;
+  &:hover {
+    color: darken($blue, 12%);
+  }
 }
 
 html {
