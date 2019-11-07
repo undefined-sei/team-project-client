@@ -5,6 +5,8 @@ const config = require('../config.js')
 const getFormFields = require('../../../lib/get-form-fields.js')
 const msgApi = require('./api.js')
 const msgUi = require('./ui.js')
+const msgIndexTemplate = require('../templates/msg-listing.handlebars')
+
 // Require statements related to socket.io
 const io = require('socket.io-client/dist/socket.io')
 
@@ -23,7 +25,8 @@ const userTyping = function (msg) {
 // Logs new socket message to the console for debugging
 const newSocketMessage = function (msg) {
   console.log('socket says', msg)
-  const msgIndexHtml = msgIndexTemplate({ msgs: [msg] })
+  const socketMsg = [msg]
+  const msgIndexHtml = msgIndexTemplate({ msgs: socketMsg })
   console.log(msgIndexHtml)
   $('#user-typing').hide()
   $('.messages').append(`${msgIndexHtml}`)
@@ -42,7 +45,6 @@ const onCreateMsg = function (event) {
     })
     .then(msgUi.onCreateMsgSuccess)
     .catch(msgUi.onCreateMsgFailure)
-    .then(onIndex)
 }
 // ----------
 
