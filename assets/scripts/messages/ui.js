@@ -32,12 +32,7 @@ const onIndexSuccess = responseData => {
   store.message = responseData.message
   // Creates new property of currentOwner in the store
   store.message.forEach(x => x.currentOwner = store.user._id)
-  // console.log('Got all messages!')
-  // console.log(responseData)
-  // Creates socket connection after successful log-in
   io(config.apiUrl)
-  console.log(store)
-
   // This will inovke the handlebars script to populate the user view with all messages
   const msgIndexHtml = msgIndexTemplate({ msgs: store.message })
   $('.messages').html(msgIndexHtml)
