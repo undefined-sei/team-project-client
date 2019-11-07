@@ -17,14 +17,9 @@ const onCreateMsgSuccess = responseData => {
   $('.message').val('')
 
   $('#user-typing').hide()
-<<<<<<< HEAD
-
-
-=======
   // const singleMsg = [responseData.message]
   // const msgAppend = msgIndexTemplate({ msgs: singleMsg })
   // $('.message').append(msgAppend)
->>>>>>> Handlebars styling changes, removed onIndex from message creation.
 }
 
 const onCreateMsgFailure = () => {
