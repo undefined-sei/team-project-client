@@ -105,17 +105,12 @@ const onDeleteMsg = function (event) {
 
 // UI helper functions
 const toggleUpdate = function (event) {
-<<<<<<< HEAD
   if (this.dataset.id === store.user._id) {
     $('.update-form').hide()
     $('.msg-content').show()
     $(this).find('form').show()
     $(this).find('.msg-content').hide()
   }
-=======
-  $('.update-form').hide()
-  $(event.target).find('form').show()
->>>>>>> Add onIndex() to socket message creation, resolved socket error
 }
 // ----------
 
