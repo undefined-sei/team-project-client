@@ -1,128 +1,60 @@
-[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
+# Team-Undefined-client
+![Website]
 
-# browser-template
+[API](https://glacial-cliffs-68778.herokuapp.com/)
 
-A template for starting front-end projects. Webpack for `require` system, build
-pipeline, and development server. Boostrap and Handlebars.js included. No
-front-end frameworks included.
+[Website]( https://undefined-sei.github.io/team-project-client/)
 
-## Installation
+[API Github](https://github.com/undefined-sei/team-project-api)
 
-1. [Download](../../archive/master.zip) this template.
-    - **Do Not Fork And Clone**
-    - Click the "Clone or Download" button and select "Download Zip".
-1. Move to the `wdi/projects` directory, then unzip the template directory with
-    `unzip /Users/<user-name>/Downloads/browser-template-master.zip`.
-1. Rename the template directory from `browser-template-master` to
-    `<project-name>-client`.
-1. Empty [`README.md`](README.md) and fill with your own content.
-1. Replace all instances of `ga-wdi-boston.browser-template` with the name of
-    your project.
-    - You can search for all instances of text in Atom by pressing
-    `commant + shift + f` on Mac or `ctrl + shift + f` on WSL.
-1. Move into the new project and `git init`.
-1. Add all of the files in your project with the command `git add --all`.
-      - **Note: This is the only time you should run this command!**
-1. Commit all of your files with the command `git commit`.
-      - Your commit title should read `Initial commit`.
-1. Install dependencies with `npm install`.
-1. Create a new repository on [github.com](https://github.com),
-    _not GitHub Enterprise_.
-1. Name the new repository with the same name used on Step 3.
-1. Follow the instructions on your new repository's setup page. For details on
-   how to push to Github, refer to the section on Github entitled "…or push an existing
-   repository from the command line." Further documentation can be found [here](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/).
+This app is a chatroom app where users can sign in and have access to a chatroom that they create messages sent in real time to other users logged in. Users can also edit and delete their own messages, and have no fear of other users deleting their messages
 
-## Structure
+We as a group began this project with a clear idea of what our MVP product should be. We lined out our user stories and worked on a wirefram alongside our ERD's. We wanted to avoid as many conflicts as a group, so we elected Alex our Scrum leader and Josh as our Front End leader. Alex was to be the main Back End leader.
 
-### Scripts
+As we began this project we seperated out who would work on which folder and attempted to follow this structure throughout the project. Ismael was to create our authentication, Rick was to work on message CRUD, Josh was to work on html and app.js, and Alex was working on creating our backend. As we all completed our work we checked our work and continued to check in with our progress. We moved alonged to our next parts in the project. Ismael was to work on design, Rick was to start work on handlebars, Josh was to help as needed and keep these tasks on track while attempting tests, and Alex was to work on Sockets. As this played out we managed to complete our MVP product
 
-Developers should store JavaScript files in [`assets/scripts`](assets/scripts).
-The "manifest" or entry-point is
-[`assets/scripts/app.js`](assets/scripts/app.js). In general, only
-application initialization goes in this file. It's normal for developers to
-start putting all code in this file, but encourage them to break out different
-responsibilities and use the `require` syntax put references where they're
-needed.
+Overall we are pleased with the progress this project has. We would like to implement a few features, including a way for users to create chatrooms, as well as avatars for themselves.
 
-### Config
-
-Developers should set `apiUrls.production` and `apiUrls.development` in
-[`assets/scripts/config.js`](assets/scripts/config.js).  With
-`apiUrls` set, developers may rely on `apiUrl` as the base for API
-URLs.
-
-### Styles
-
-Developers should store styles in [`assets/styles`](assets/styles) and load them
-from [`assets/styles/index.scss`](assets/styles/index.scss). Bootstrap version 3 is
-included in this template.
-
-### Forms and Using `getFormFields`
-
-Developers should use [getFormFields](get-form-fields.md) to retrieve form data
-to send to an API.
-
-### Deployment
-
-To deploy a browser-template based SPA, run `grunt deploy`.
-
-## Adding Images
-
-To add images to your project, you must store them in the `public` directory.
-To use the image in HTML or CSS, write the path to the image like this:
-
-```html
-<img src="public/cat.jpg">
 ```
-or
-```css
-#my-cool-div {
-  background-image: url('public/cat.jpg')
-}
+User Stories
+
+As an unregistered user, I would like to sign up with email and password.
+As a registered user, I would like to sign in with email and password.
+As a signed in user, I would like to change password.
+As a signed in user, I would like to sign out.
+As a signed in user, I would like to join a chat room.
+As a signed in user in a room, I would like to see all messages in the chat room.
+As a signed in user in a room, I would like to send my own messages to the chat room.
+As a signed in user in a room, I would like to update my own messages to the chat room.
+As a signed in user in a room, I would like to delete my own messages to the chat room.
 ```
 
-Note that there's no `./` or `/` in front of `public/filename.jpg`.
 
-## Adding Fonts
+![wireframe](https://media.git.generalassemb.ly/user/23013/files/97588a80-ffb0-11e9-9c86-769138c57ef8)
 
-To add custom fonts to your app, you can either use a CDN like Google Fonts, or
-you can download the fonts and save them in the `public` directory. If you use
-the former method, follow the directions on the website providing the fonts.
+## Getting Started
 
-For local fonts, put the files in `public`, and then import and use them in a
-`.scss` file like this:
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-```scss
-@font-face {
-  font-family: 'Nature Beauty';
-  src: url('public/Nature-Beauty.ttf') format('truetype');
-}
+### Prerequisites
 
-.element-with-custom-font {
-  font-family: 'Nature Beauty';
-}
-```
+Install dependencies with npm install.
 
-## Tasks
+## Built With
 
-Developers should run these often!
+* [Javascript](https://www.javascript.com/) - The main game engine
+* [Jquery](https://jquery.com/) - The main library used
+* [SocketsIo](https://socket.io/) - How the chatroom handles live updates
 
-- `grunt nag` or just `grunt`: runs code quality analysis tools on your code
-    and complains
-- `grunt make-standard`: reformats all your code in the JavaScript Standard Style
-- `grunt <server|serve|s>`: generates bundles, watches, and livereloads
-- `grunt build`: place bundled styles and scripts where `index.html` can find
-    them
-- `grunt deploy`: builds and deploys master branch
+## Contributing
 
+Please read [CONTRIBUTING.md](https://github.com/undefined-sei/team-project-client/blob/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
-## Additional Resources
-
-- [Modern Javascript Explained for Dinosaurs](https://medium.com/@peterxjang/modern-javascript-explained-for-dinosaurs-f695e9747b70)
-- [Making Sense of Front End Build Tools](https://medium.freecodecamp.org/making-sense-of-front-end-build-tools-3a1b3a87043b)
-
-## [License](LICENSE)
+## Authors
+* **Rick Bresnahan** - [chardbres](https://github.com/chardbres)
+* **Ismael Fernandez** - [Ismaeltech](https://github.com/Ismaeltech)
+* **Joshuah Martin** - [HajimeNoJosh](https://github.com/HajimeNoJosh)
+* **Alex Tsuji** - [asooge](https://github.com/asooge)
 
 1. All content is licensed under a CC­BY­NC­SA 4.0 license.
 1. All software code is licensed under GNU GPLv3. For commercial use or
