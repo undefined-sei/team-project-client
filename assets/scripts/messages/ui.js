@@ -46,8 +46,7 @@ const onIndexFailure = () => {
 
 // Message update success and failure UI
 const onUpdateMsgSuccess = () => {
-  msgApi.indexMsgs()
-    .then(onIndexSuccess)
+
 }
 
 const onUpdateMsgFailure = () => {
