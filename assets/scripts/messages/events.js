@@ -43,6 +43,7 @@ const newDeleteMessage = function () {
 }
 // Creates a message
 const onCreateMsg = function (event) {
+  console.log('Maybe help Alex')
   event.preventDefault()
   // Creates new message in the database
   const formData = getFormFields(event.target)
