@@ -37,6 +37,7 @@ const onIndexSuccess = responseData => {
   const msgIndexHtml = msgIndexTemplate({ msgs: store.message })
   $('.messages').html(msgIndexHtml)
   $('.update-form').hide()
+  $('.messages').scrollTop($('.messages')[0].scrollHeight)
 }
 
 const onIndexFailure = () => {
