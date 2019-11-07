@@ -8,6 +8,14 @@
   box-sizing: inherit;
 }
 
+.input-message {
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
 html {
   font-size: 10px;
   font-family: 'Roboto', sans-serif;
@@ -49,6 +57,7 @@ body {
   width: 100%;
   max-width: 93.5rem;
   margin: 3rem auto 0;
+  position: relative;
   z-index: 1;
 }
 
@@ -76,7 +85,6 @@ body {
   width: 100%;
   max-width: 35rem;
   margin-top: 3rem;
-  position: relative;
 }
 
 .form-data form {
