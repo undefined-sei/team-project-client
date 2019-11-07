@@ -77,23 +77,24 @@ h2 {
   }
   }
 
-.messages {
-    padding: 30px 30px 20px;
-    border-bottom: 2px solid white;
-    overflow-y: scroll;
-    height: 575px;
-}
+  .messages {
+      // padding: 30px 30px 20px;
+      border-bottom: 2px solid white;
+      overflow-y: scroll;
+      height: 575px;
+  }
 
 
-.msg {
-  line-height: 26px;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  border-radius: 7px;
-  background: $blue;
-  width: 90%;
-  max-width: 800px;
-}
+  .msg {
+    margin: 15px auto;
+    line-height: 26px;
+    // margin-top: 15px;
+    // margin-bottom: 15px;
+    border-radius: 7px;
+    background: $blue;
+    // width: 90%;
+    // max-width: 800px;
+  }
 
 .textarea {
       width: 100%;
@@ -138,7 +139,7 @@ p {
 .delete-button {
   display: flex;
   justify-content: flex-end;
-  margin-top: 5px;
+  // margin-top: 5px;
   border-radius: 5px;
   background: #fff;
   color: $blue;

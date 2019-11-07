@@ -1,6 +1,6 @@
 {{#each msgs as |msg| }}
   <div class="msg" id={{msg._id}} data-id={{msg.owner._id}} style="display: flex; flex-direction: row; align-items: center;">
-    <p class="timestamp">
+    <p class="timestamp" style="margin: 0;">
       {{msg.createdAt}}
     </p>
     <p class="msg-email" style="display: flex; justify-content: center; width: 20%; margin: 0 0 0 5%">
