@@ -41,6 +41,8 @@ $(() => {
   // Socket.io event handlers
   socket.on('new message', messageEvents.newSocketMessage)
   socket.on('user-typing', messageEvents.userTyping)
+  socket.on('update message', messageEvents.newUpdateMessage)
+  socket.on('delete message', messageEvents.newDeleteMessage)
 
   $('.message').on('input', () => {
     socket.emit('user-typing', $('.message').val())
