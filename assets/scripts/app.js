@@ -10,6 +10,7 @@ const io = require('socket.io-client/dist/socket.io')
 const socket = io(config.apiUrl)
 const authEvents = require('./auth/events.js')
 const messageEvents = require('./messages/events.js')
+// const chatroomEvents = require('./chatrooms/events.js')
 
 $(() => {
   $('#sign-up').on('submit', authEvents.onSignUp)
@@ -45,4 +46,6 @@ $(() => {
     socket.emit('user-typing', $('.message').val())
     return false
   })
+  // $('.make-chatroom').on('submit', chatroomEvents.onCreateChatroom)
+  $('.chatroomSection').hide()
 })
