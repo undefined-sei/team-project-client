@@ -13,17 +13,7 @@ const io = require('socket.io-client/dist/socket.io')
 // Makes the socket.io available to all functions
 const socket = io(config.apiUrl)
 
-const userTyping = function (msg) {
-  console.log(msg)
-  if (msg) {
-    $('#user-typing').show()
-  } else {
-    $('#user-typing').hide()
-  }
-}
-
-// Socket.io functions
-
+// SOCKET.IO FUNCTIONS
 // Logs new socket message to the console for debugging
 const newSocketMessage = function (msg) {
   console.log('socket says', msg)
@@ -39,21 +29,25 @@ const newSocketMessage = function (msg) {
 const updateSocketMessage = function (msg) {
   $(`#${msg[1]}`).find('.msg-content').text(msg[0])
   console.log('Update msg' + msg)
-  $('.msg-content').show()
-  $('.update-form').hide()
+  $(`#${msg[1]}`).find('.msg-content').show()
+  $(`#${msg[1]}`).find('.update-form').hide()
 }
 
 const deleteSocketMessage = function (msg) {
   $(`#${msg}`).remove()
 }
-// ----------
 
-const addListeners = () => {
-  $('.update-form').on('submit', onUpdateMsg)
-  $('.delete-button').on('click', onDeleteMsg)
-  $('.msg').on('click', toggleUpdate)
+const userTyping = function (msg) {
+  console.log(msg)
+  if (msg) {
+    $('#user-typing').show()
+  } else {
+    $('#user-typing').hide()
+  }
 }
+// ------------------------------
 
+// CRUD functions
 // Creates a message
 const onCreateMsg = function (event) {
   event.preventDefault()
@@ -121,8 +115,17 @@ const onDeleteMsg = function (event) {
     // .then(onIndex)
 }
 // ----------
+// ------------------------------
 
 // UI helper functions
+// Adds listeners onto divs to update messages
+const addListeners = () => {
+  $('.update-form').on('submit', onUpdateMsg)
+  $('.delete-button').on('click', onDeleteMsg)
+  $('.msg').on('click', toggleUpdate)
+}
+// ---------
+
 const toggleUpdate = function (event) {
   if (this.dataset.id === store.user._id) {
     $('.update-form').hide()
@@ -131,7 +134,7 @@ const toggleUpdate = function (event) {
     $(this).find('.msg-content').hide()
   }
 }
-// ----------
+// ------------------------------
 
 module.exports = {
   onCreateMsg,
