@@ -18,6 +18,65 @@ $blue: #94C2ED;
 //   margin: 10px 0;
 // }
 
+.user-settings {
+  margin-top: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  background: #fff;
+  color: $blue;
+  &:hover {
+  color: #fff;
+  background: $blue;
+  }
+}
+
+.changePasswordSection input {
+  margin-top: 5px;
+  width: 250px;
+  height: 40px;
+}
+
+h2 {
+  color: $blue;
+}
+/* change password button*/
+
+.change-button {
+  margin-top: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  background: #fff;
+  color: $blue;
+  &:hover {
+  color: #fff;
+  background: $blue;
+  }
+}
+
+.changePasswordSection {
+  width: 315px;
+  margin-left: 60rem;
+  background-color: #F2F5F8;
+  padding: 30px;
+  padding-right: .6px;
+  border-radius: 10px;
+}
+
+/* sign-out button*/
+.out-button {
+  margin-top: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  margin-left: 75rem;
+  background: #fff;
+  margin-left: 75rem;
+  color: $blue;
+  &:hover {
+  color: #fff;
+  background: $blue;
+  }
+  }
+
 .messages {
     padding: 30px 30px 20px;
     border-bottom: 2px solid white;
@@ -27,7 +86,6 @@ $blue: #94C2ED;
 
 
 .msg {
-  padding: 18px 20px;
   line-height: 26px;
   margin-top: 15px;
   margin-bottom: 15px;
@@ -51,7 +109,7 @@ textarea {
 .text-Wrapper {
   padding: 30px;
   width: 490px;
-  float: left;
+  float: center;
   background: #F2F5F8;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -59,7 +117,7 @@ textarea {
 }
 
 .message-button {
-  float: right;
+      float: right;
       color: $blue;
       border-radius: 5px;
       font-size: 18px;
@@ -69,11 +127,24 @@ textarea {
       font-weight: bold;
       background: #F2F5F8;
       &:hover {
-        color: darken($blue, 12%);
+      color: darken($blue, 12%);
       }
 }
 
+p {
+  color: #fff;
+}
+
 .delete-button {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 5px;
+  border-radius: 5px;
+  background: #fff;
+  color: $blue;
+  &:hover {
+    color: darken($blue, 12%);
+  }
 }
 
 html {
