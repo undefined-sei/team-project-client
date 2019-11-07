@@ -1,13 +1,9 @@
 {{#each msgs as |msg| }}
-{{log msg.owner}}
-{{log msg.currentOwner}}
-{{log msg.currentOwner}}
-{{log msg.owner.email}}
   <div class="msg" id={{msg._id}} style="border: 1px solid gray; display: flex; flex-direction: row; align-items: center">
     <p class="timestamp">
       {{msg.createdAt}}
     </p>
-    <p class="msg-email">
+    <p class="msg-email" style="margin: 0 0 0 5%">
       {{msg.owner.email}}
     </p>
     <p class="msg-content" style="margin: 0 0 0 5%">
