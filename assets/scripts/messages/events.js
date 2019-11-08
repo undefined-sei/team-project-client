@@ -20,7 +20,7 @@ const newSocketMessage = function (msg) {
   msg.currentOwner = store.user._id
   const msgIndexHtml = msgIndexTemplate({ msgs: store.socketMsg })
   $('.messages').append(msgIndexHtml)
-  $('#user-typing, .update-form').hide()
+  $('#user-typing').hide()
   addListeners()
   $('.messages').scrollTop($('.messages')[0].scrollHeight)
 }

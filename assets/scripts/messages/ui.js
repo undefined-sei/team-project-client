@@ -16,9 +16,6 @@ const onCreateMsgSuccess = responseData => {
   $('.message').val('')
 
   $('#user-typing').hide()
-  // const singleMsg = [responseData.message]
-  // const msgAppend = msgIndexTemplate({ msgs: singleMsg })
-  // $('.message').append(msgAppend)
 }
 
 const onCreateMsgFailure = () => {
