@@ -22,6 +22,7 @@ const newSocketMessage = function (msg) {
   $('.messages').append(msgIndexHtml)
   $('#user-typing, .update-form').hide()
   addListeners()
+  $('.messages').scrollTop($('.messages')[0].scrollHeight)
 }
 
 const updateSocketMessage = function (msg) {
