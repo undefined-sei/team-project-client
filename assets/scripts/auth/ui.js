@@ -35,7 +35,6 @@ const onSignUpFailure = () => {
 const onSignInSuccess = function (response) {
   successMessage('Signed in successfully')
   store.user = response.user
-  console.log(store.user)
   index.onIndex()
   $('.messageSection').show()
   $('.signInSection').hide()

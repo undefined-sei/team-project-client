@@ -16,11 +16,9 @@ const socket = io(config.apiUrl)
 // SOCKET.IO FUNCTIONS
 // Logs new socket message to the console for debugging
 const newSocketMessage = function (msg) {
-  console.log('socket says', msg)
   store.socketMsg = [msg]
   msg.currentOwner = store.user._id
   const msgIndexHtml = msgIndexTemplate({ msgs: store.socketMsg })
-  console.log(msgIndexHtml)
   $('.messages').append(msgIndexHtml)
   $('#user-typing, .update-form').hide()
   addListeners()
@@ -28,7 +26,6 @@ const newSocketMessage = function (msg) {
 
 const updateSocketMessage = function (msg) {
   $(`#${msg[1]}`).find('.msg-content').text(msg[0])
-  console.log('Update msg' + msg)
   $(`#${msg[1]}`).find('.msg-content').show()
   $(`#${msg[1]}`).find('.update-form').hide()
 }
@@ -38,7 +35,6 @@ const deleteSocketMessage = function (msg) {
 }
 
 const userTyping = function (msg) {
-  console.log(msg)
   if (msg) {
     $('#user-typing').show()
   } else {
@@ -100,9 +96,6 @@ const onUpdateMsg = function (event) {
 
 // Delete message
 const onDeleteMsg = function (event) {
-  console.log(store)
-
-  console.log(event.target)
   // Gets the messge ID by the html attribute when the div is clicked
   const msgId = event.target.dataset.id
   msgApi.deleteMsg(msgId)
