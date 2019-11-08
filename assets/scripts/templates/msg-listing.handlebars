@@ -11,7 +11,7 @@
         {{msg.text}}
       </p>
       {{#if (equal msg.owner._id msg.currentOwner) }}
-        <form class="update-form" data-id={{msg._id}}>
+        <form class="update-form" data-id={{msg._id}} style="display: none">
           <input type="text" name="message[text]" value="{{msg.text}}">
           <button class="update-button" data-id={{msg._id}}>Update</button>
         </form>
