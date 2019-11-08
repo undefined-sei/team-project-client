@@ -13,7 +13,6 @@ const msgApi = require('./api.js')
 // Message creation success and failure UI
 const onCreateMsgSuccess = responseData => {
   store.message = responseData.message
-  console.log('Message created!')
   $('.message').val('')
 
   $('#user-typing').hide()
@@ -23,7 +22,6 @@ const onCreateMsgSuccess = responseData => {
 }
 
 const onCreateMsgFailure = () => {
-  console.log('Failed to create message!')
 }
 // ----------
 
@@ -41,7 +39,6 @@ const onIndexSuccess = responseData => {
 }
 
 const onIndexFailure = () => {
-  console.log('Failed to retrieve messages!')
 }
 // ----------
 
@@ -51,17 +48,14 @@ const onUpdateMsgSuccess = () => {
 }
 
 const onUpdateMsgFailure = () => {
-  console.log('Failed to update message.')
 }
 // ----------
 
 // Message delete success and failure UI
 const onDeleteMsgSuccess = () => {
-  console.log('Made it here!')
 }
 
 const onDeleteMsgFailure = () => {
-  console.log('Failed to delete message.')
 }
 // ----------
 
