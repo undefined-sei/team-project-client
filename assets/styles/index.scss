@@ -207,8 +207,7 @@ body {
 }
 
 .signInSection {
-  width: 100%;
-  max-width: 93.5rem;
+  max-width: 99.5rem;
   margin: 3rem auto 0;
   position: relative;
   z-index: 2;
@@ -224,8 +223,7 @@ body {
 }
 
 .signUpSection {
-  width: 100%;
-  max-width: 93.5rem;
+  max-width: 99.5rem;
   margin: 3rem auto 0;
   position: relative;
   z-index: 1;
@@ -242,19 +240,24 @@ body {
 }
 
 .phone-app {
-  height: 61.8rem;
-  width: 454px;
+  height: 68.9rem;
+  width: 400px;
   /* background: url("images/mobileapp.png") center no-repeat; */
   flex: 1;
   align-self: center;
   position: relative;
   z-index: 10;
+  margin-right: 4rem;
+}
+
+.mobile-phone {
+  display: none;
 }
 
 .form-data {
   width: 100%;
   max-width: 35rem;
-  margin-top: 3rem;
+  margin-top: 10rem;
 }
 
 .form-data form {
@@ -403,4 +406,21 @@ body {
 }
 .phone-app2{
   flex: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .phone-app {
+    display: none;
+  }
+
+  .mobile-phone {
+    display: hidden;
+    height: 68.9rem;
+    width: 450px;
+    flex: 1;
+    align-self: center;
+    position: relative;
+    z-index: 10;
+    margin-right: 4rem;
+  }
 }
