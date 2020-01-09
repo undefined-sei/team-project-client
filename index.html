@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Team Undefined's Chatroom</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="https://kit.fontawesome.com/6a457a4271.js"></script>
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <!-- div wraps entire content to accomplish background animation-->
+  <div class="animation-effect">
+    <nav>
+      <button class="user-settings">User Settings</button>
+      <button class="goback">Go Back</button>
+    </nav>
+  <div id="message">
+  </div>
+  <div class="wrapper">
+  <div class="signInSection">
+    <!-- image of 2 phones-->
+    <img class="phone-app" src="./public/lets-chat-phone.png" alt="">
+    <img class="mobile-phone" src="./public/lets-chat-phone-mobile.png" alt="">
+    <div class="form-data">
+    <form id="sign-in">
+      <div class="logo">
+        <img src="./public/chat-logo.png" alt="">
+      </div>
+      <input placeholder="Enter email..." type="email" name="credentials[email]" required>
+      <input placeholder="Enter password..." type="password" name="credentials[password]" class="password" required>
+        <button class="form-btn" id="signIn">Sign in</button>
+        <!-- <span class="has-separator">Or</span>
+          <a class="facebook-login" href="#">
+          <i class="fab fa-facebook"></i> Log in with Facebook
+          </a>
+          <a class="password-reset" href="#">Forgot password?</a> -->
+    </form>
+    <div class="sign-up-show">
+      Don't have an account? <a id="show-signup"href="#">Sign up</a>
+    </div>
+    </div>
+   </div>
+  <div class="signUpSection">
+    <img class="phone-app" src="./public/lets-chat-phone.png" alt="">
+    <div class="form-data">
+    <form id="sign-up">
+      <div class="logo">
+        <img src="./public/chat-logo.png" alt="">
+      </div>
+        <input placeholder="Enter email..." type="email" name="credentials[email]">
+        <input placeholder="Enter password..." type="password" name="credentials[password]" class="password">
+        <input placeholder="Confirm password..." type="password" name="credentials[password_confirmation]" class="password">
+      <button class="form-btn" id="signUp">Sign up</button>
+      <!-- <span class="has-separator">Or</span> -->
+        <!-- <a class="facebook-login" href="#">
+        <i class="fab fa-facebook"></i> Log in with Facebook
+        </a>
+        <a class="password-reset" href="#">Forgot password?</a> -->
+      </form>
+      <div class="sign-up-show">
+          Already have an account? <a id="show-signin"href="#">Sign In</a>
+      </div>
+
+      </div>
+  </div>
+  <div class="change-Password-Section">
+    <!-- image of 2 phones-->
+    <img class="phone-app phone-app2" src="./public/lets-chat-phone.png" alt="">
+    <div class="form-data">
+    <form id="change-password">
+      <div class="logo">
+        <img src="./public/chat-logo.png" alt="">
+      </div>
+      <input placeholder="Enter Old Password..." type="password" name="passwords[old]" class="password">
+      <input placeholder="Enter New Password..." type="password" name="passwords[new]" class="password">
+      <button class="change-button" id="changePassword">Change Password</button>
+    </form>
+    <div>
+    <form id="sign-out">
+      Don't Want To Chat <button class="out-button"id="signout">Sign Out</button>
+    </form>
+    </div>
+    </div>
+   </div>
+
+  <!-- <section class="signOutSection">
+
+    </form>
+  </section> -->
+  <div class="messages">
+  </div>
+  <section class="messageSection">
+    <form id="send-message">
+      <div class="text-Wrapper">
+        <p id='user-typing' style='display: none'>user is typing ...</p>
+        <input placeholder="Enter New Message..." type="text" name="message[text]" class="message enterJoshMessage">
+        <button class="message-button" id="sendMessage">SEND</button>
+      </div>
+      </form>
+    </section>
+        <!-- CHANGE PASSWORD-->
+        <!-- <div class="changePasswordSection">
+          <h2 id="changePassword">Change Password</h2>
+          <form id="change-password">
+            <div class="inputWrapper">
+              <input placeholder="Enter Old Password..." type="password" name="passwords[old]" class="password">
+            </div>
+            <div class="inputWrapper">
+              <input placeholder="Enter New Password..." type="password" name="passwords[new]" class="password">
+            </div>
+            <button class="change-button" id="changePassword">Change Password</button>
+
+          </form>
+        </div> -->
+      </div>
+
+  <section class="chatroomSection">
+    <form id="make-chatroom">
+      <div class="inputWrapper">
+        <input placeholder="Enter Chatroom Name..." type="text" name="charoom[name]" class="chatroom">
+      </div>
+      <button id="createChatroom">create</button>
+    </form>
+  </section>
+
+  <div class="chatroom-list">
+  </div>
+  </div>
+</div>
+
+</body>
+
+</html>
